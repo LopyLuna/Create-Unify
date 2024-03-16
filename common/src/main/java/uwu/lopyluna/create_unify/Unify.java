@@ -14,6 +14,7 @@ public class Unify {
     public static void init() {
         LOGGER.info("{} initializing! Create version: {} on platform: {}", NAME, Create.VERSION, ExampleExpectPlatform.platformName());
         UnifyBlocks.init(); // hold registrate in a separate class to avoid loading early on forge
+        UnifyItems.init();
     }
 
     public static ResourceLocation id(String path) {

@@ -4,6 +4,7 @@ import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.ModInitializer;
 import uwu.lopyluna.create_unify.UnifyBlocks;
 import uwu.lopyluna.create_unify.Unify;
+import uwu.lopyluna.create_unify.UnifyItems;
 
 public class UnifyModFabric implements ModInitializer {
     @Override
@@ -15,5 +16,6 @@ public class UnifyModFabric implements ModInitializer {
                 ), Unify.NAME);
         // on fabric, Registrates must be explicitly finalized and registered.
         UnifyBlocks.REGISTRATE.register();
+        UnifyItems.REGISTRATE.register();
     }
 }
