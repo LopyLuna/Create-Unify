@@ -1,19 +1,19 @@
-package net.examplemod.fabric;
+package uwu.lopyluna.create_unify.fabric;
 
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
-import net.examplemod.ExampleBlocks;
-import net.examplemod.ExampleMod;
 import net.fabricmc.api.ModInitializer;
+import uwu.lopyluna.create_unify.UnifyBlocks;
+import uwu.lopyluna.create_unify.Unify;
 
-public class ExampleModFabric implements ModInitializer {
+public class UnifyModFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        ExampleMod.init();
-        ExampleMod.LOGGER.info(EnvExecutor.unsafeRunForDist(
+        Unify.init();
+        Unify.LOGGER.info(EnvExecutor.unsafeRunForDist(
                 () -> () -> "{} is accessing Porting Lib on a Fabric client!",
                 () -> () -> "{} is accessing Porting Lib on a Fabric server!"
-                ), ExampleMod.NAME);
+                ), Unify.NAME);
         // on fabric, Registrates must be explicitly finalized and registered.
-        ExampleBlocks.REGISTRATE.register();
+        UnifyBlocks.REGISTRATE.register();
     }
 }

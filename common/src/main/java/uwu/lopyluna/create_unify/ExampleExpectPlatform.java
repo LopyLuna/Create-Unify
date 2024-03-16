@@ -1,4 +1,4 @@
-package net.examplemod;
+package uwu.lopyluna.create_unify;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 

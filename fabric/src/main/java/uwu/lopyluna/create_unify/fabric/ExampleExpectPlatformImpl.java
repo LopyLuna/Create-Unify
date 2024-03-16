@@ -1,4 +1,4 @@
-package net.examplemod.fabric;
+package uwu.lopyluna.create_unify.fabric;
 
 import net.fabricmc.loader.api.FabricLoader;
 

@@ -27,6 +27,7 @@ configurations {
 repositories {
     // mavens for Forge-exclusives
     maven { url = "https://maven.theillusivec4.top/" } // Curios
+    maven { url = "https://maven.blamejared.com/" }
     maven { // Create Forge and Registrate Forge
         url = "https://maven.tterrag.com/"
         content {
@@ -71,8 +72,8 @@ processResources {
 loom {
     forge {
         mixinConfig(
-                "examplemod-common.mixins.json",
-                "examplemod.mixins.json"
+                "create_unify-common.mixins.json",
+                "create_unify.mixins.json"
         )
     }
 }
