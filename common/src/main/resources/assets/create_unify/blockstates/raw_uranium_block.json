@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+    "model": "create_unify:block/raw_uranium_block"
+    }
+  }
+}
