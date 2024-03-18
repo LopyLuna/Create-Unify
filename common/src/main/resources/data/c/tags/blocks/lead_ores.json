@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:lead_ore",
+    "create_unify:deepslate_lead_ore"
+  ]
+}

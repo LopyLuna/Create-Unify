@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:uranium_ore",
+    "create_unify:deepslate_uranium_ore"
+  ]
+}

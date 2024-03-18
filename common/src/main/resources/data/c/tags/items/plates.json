@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:tin_sheet",
+    "create_unify:aluminum_sheet",
+    "create_unify:lead_sheet",
+    "create_unify:silver_sheet",
+    "create_unify:platinum_sheet",
+    "create_unify:uranium_sheet",
+    "create_unify:bronze_sheet",
+    "create_unify:electrum_sheet",
+    "create_unify:cast_iron_sheet",
+    "create_unify:steel_sheet",
+
+    "create_unify:zinc_sheet",
+    "create_unify:andesite_alloy_sheet",
+    "create_unify:netherite_sheet"
+  ]
+}

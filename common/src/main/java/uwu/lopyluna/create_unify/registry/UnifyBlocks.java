@@ -28,13 +28,13 @@ public class UnifyBlocks {
 	public static final BlockEntry<Block>
 			TIN_BLOCK = MetalBlock("tin", "Tin", SoundType.METAL, MaterialColor.QUARTZ, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			ALUMINUM_BLOCK = MetalBlock("aluminum", "Aluminum", SoundType.METAL, MaterialColor.QUARTZ, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
-			LEAD_BLOCK = MetalBlock("lead", "Lead", SoundType.METAL, MaterialColor.TERRACOTTA_PURPLE, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
+			LEAD_BLOCK = MetalBlock("lead", "Lead", SoundType.NETHERITE_BLOCK, MaterialColor.TERRACOTTA_PURPLE, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			SILVER_BLOCK = MetalBlock("silver", "Silver", SoundType.METAL, MaterialColor.COLOR_LIGHT_GRAY, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			PLATINUM_BLOCK = MetalBlock("platinum", "Platinum", SoundType.METAL, MaterialColor.COLOR_LIGHT_GRAY, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			URANIUM_BLOCK = MetalBlock("uranium", "Uranium", SoundType.METAL, MaterialColor.TERRACOTTA_GREEN, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			BRONZE_BLOCK = MetalBlock("bronze", "Bronze", SoundType.NETHERITE_BLOCK, MaterialColor.TERRACOTTA_ORANGE, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			ELECTRUM_BLOCK = MetalBlock("electrum", "Electrum", SoundType.METAL, MaterialColor.COLOR_YELLOW, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
-			CAST_IRON_BLOCK = MetalBlock("cast_iron", "Cast Iron", SoundType.METAL, MaterialColor.TERRACOTTA_GRAY, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
+			CAST_IRON_BLOCK = MetalBlock("cast_iron", "Cast Iron", SoundType.NETHERITE_BLOCK, MaterialColor.TERRACOTTA_GRAY, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK),
 			STEEL_BLOCK = MetalBlock("steel", "Steel", SoundType.NETHERITE_BLOCK, MaterialColor.COLOR_GRAY, BlockTags.NEEDS_IRON_TOOL, () -> Blocks.IRON_BLOCK)
 	;
 

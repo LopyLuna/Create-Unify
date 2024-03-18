@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:deepslate_tin_ore",
+    "create_unify:deepslate_aluminum_ore",
+    "create_unify:deepslate_lead_ore",
+    "create_unify:deepslate_silver_ore",
+    "create_unify:deepslate_platinum_ore",
+    "create_unify:deepslate_uranium_ore"
+  ]
+}

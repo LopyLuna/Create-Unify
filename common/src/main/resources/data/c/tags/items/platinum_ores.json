@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:platinum_ore",
+    "create_unify:deepslate_platinum_ore"
+  ]
+}

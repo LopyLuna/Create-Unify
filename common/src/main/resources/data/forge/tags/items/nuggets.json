@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:tin_nugget",
+    "create_unify:aluminum_nugget",
+    "create_unify:lead_nugget",
+    "create_unify:silver_nugget",
+    "create_unify:platinum_nugget",
+    "create_unify:uranium_nugget",
+    "create_unify:bronze_nugget",
+    "create_unify:electrum_nugget",
+    "create_unify:cast_iron_nugget",
+    "create_unify:steel_nugget"
+  ]
+}

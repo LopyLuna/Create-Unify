@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:lead_ingot",
+    "create_unify:silver_ingot",
+    "create_unify:platinum_ingot",
+    "create_unify:uranium_ingot",
+    "create_unify:bronze_ingot",
+    "create_unify:electrum_ingot",
+    "create_unify:cast_iron_ingot",
+    "create_unify:steel_ingot"
+  ]
+}

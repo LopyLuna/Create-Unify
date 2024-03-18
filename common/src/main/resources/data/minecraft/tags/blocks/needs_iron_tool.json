@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:lead_block",
+    "create_unify:silver_block",
+    "create_unify:platinum_block",
+    "create_unify:uranium_block",
+    "create_unify:bronze_block",
+    "create_unify:electrum_block",
+    "create_unify:cast_iron_block",
+    "create_unify:steel_block",
+    "create_unify:raw_lead_block",
+    "create_unify:raw_silver_block",
+    "create_unify:raw_platinum_block",
+    "create_unify:raw_uranium_block",
+    "create_unify:lead_ore",
+    "create_unify:deepslate_lead_ore",
+    "create_unify:silver_ore",
+    "create_unify:deepslate_silver_ore",
+    "create_unify:platinum_ore",
+    "create_unify:deepslate_platinum_ore",
+    "create_unify:uranium_ore",
+    "create_unify:deepslate_uranium_ore"
+  ]
+}

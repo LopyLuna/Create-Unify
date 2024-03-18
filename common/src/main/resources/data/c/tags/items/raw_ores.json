@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:raw_tin",
+    "create_unify:raw_aluminum",
+    "create_unify:raw_lead",
+    "create_unify:raw_silver",
+    "create_unify:raw_platinum",
+    "create_unify:raw_uranium"
+  ]
+}

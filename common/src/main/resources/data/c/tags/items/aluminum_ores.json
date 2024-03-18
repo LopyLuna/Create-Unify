@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_unify:aluminum_ore",
+    "create_unify:deepslate_aluminum_ore"
+  ]
+}
