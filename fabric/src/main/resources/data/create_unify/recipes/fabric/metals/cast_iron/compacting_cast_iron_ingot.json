@@ -2,10 +2,10 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:iron_plates"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "c:iron_plates"
     }
   ],
   "results": [

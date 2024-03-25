@@ -1,10 +1,8 @@
 {
   "replace": false,
   "values": [
-    {"id": "create_unify:tin_block", "required": false},
-    {"id": "create_unify:tin_ingot", "required": false},
-    {"id": "create_unify:tin_sheet", "required": false},
-    {"id": "create_unify:zinc_sheet", "required": false},
+    {"id": "x:this_may_not_work_or_work_only_for_displaying", "required": false},
+
     {"id": "example_modid:example_item", "required": false}
   ]
 }
