@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "uwu.lopyluna.create_unify.fabric.UnifyModFabric"
+      "uwu.lopyluna.create_unify.fabric.UnifyImpl"
     ]
   },
   "mixins": [

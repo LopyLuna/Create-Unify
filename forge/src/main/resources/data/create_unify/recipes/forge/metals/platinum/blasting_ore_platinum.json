@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "forge:ores/platinum"
+  },
+  "result": "create_unify:platinum_ingot",
+  "experience": 1.0,
+  "cookingtime": 100,
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:ores/platinum"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/uranium"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_unify:uranium_sheet"
+    }
+  ],
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:ingots/uranium" ]
+        }
+      ]
+    }
+  ]
+}

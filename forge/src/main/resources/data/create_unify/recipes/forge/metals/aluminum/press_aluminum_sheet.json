@@ -1,0 +1,29 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/aluminum"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_unify:aluminum_sheet"
+    }
+  ],
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:ingots/aluminum"
+        }
+      ]
+    }
+  ]
+}

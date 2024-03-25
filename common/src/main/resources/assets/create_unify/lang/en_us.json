@@ -29,6 +29,9 @@
   "item.create_unify.electrum_sheet": "Electrum Sheet",
   "item.create_unify.cast_iron_sheet": "Cast Iron Sheet",
   "item.create_unify.steel_sheet": "Steel Sheet",
+  "item.create_unify.zinc_sheet": "Zinc Sheet",
+  "item.create_unify.andesite_alloy_sheet": "Andesite Alloy Sheet",
+  "item.create_unify.netherite_sheet": "Netherite Sheet",
   "item.create_unify.raw_tin": "Raw Tin",
   "item.create_unify.raw_aluminum": "Raw Aluminum",
   "item.create_unify.raw_lead": "Raw Lead",
@@ -62,5 +65,6 @@
   "block.create_unify.deepslate_lead_ore": "Deepslate Lead Ore",
   "block.create_unify.deepslate_silver_ore": "Deepslate Silver Ore",
   "block.create_unify.deepslate_platinum_ore": "Deepslate Platinum Ore",
-  "block.create_unify.deepslate_uranium_ore": "Deepslate Uranium Ore"
+  "block.create_unify.deepslate_uranium_ore": "Deepslate Uranium Ore",
+  "itemGroup.create_unify": "Create Unify"
 }

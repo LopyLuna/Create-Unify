@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "forge:raw_materials/tin"
+  },
+  "result": "create_unify:tin_ingot",
+  "experience": 0.7,
+  "cookingtime": 100,
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:raw_materials/tin"
+        }
+      ]
+    }
+  ]
+}

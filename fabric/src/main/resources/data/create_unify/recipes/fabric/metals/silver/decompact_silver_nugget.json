@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/silver"
+    }
+  ],
+  "result": {
+    "item": "create_unify:silver_nugget",
+    "count": 9
+  },
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:ingots/silver" ]
+        }
+      ]
+    }
+  ]
+}

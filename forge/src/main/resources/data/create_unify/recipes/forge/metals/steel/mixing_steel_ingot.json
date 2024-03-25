@@ -1,0 +1,37 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "tag": "forge:ingots/cast_iron"
+    },
+    {
+      "tag": "forge:ingots/cast_iron"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_unify:steel_ingot",
+      "count": 2
+    }
+  ],
+  "heatRequirement": "superheated",
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:ingots/steel"
+        }
+      ]
+    }
+  ]
+}

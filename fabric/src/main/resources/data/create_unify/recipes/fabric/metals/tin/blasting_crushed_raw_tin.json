@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "create:crushed_raw_tin"
+  },
+  "result": "create_unify:tin_ingot",
+  "experience": 0.1,
+  "cookingtime": 100,
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:raw_materials/tin" ]
+        }
+      ]
+    }
+  ]
+}

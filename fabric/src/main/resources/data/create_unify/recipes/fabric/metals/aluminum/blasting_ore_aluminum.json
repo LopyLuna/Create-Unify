@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "forge:ores/aluminum"
+  },
+  "result": "create_unify:aluminum_ingot",
+  "experience": 1.0,
+  "cookingtime": 100,
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:ores/aluminum" ]
+        }
+      ]
+    }
+  ]
+}

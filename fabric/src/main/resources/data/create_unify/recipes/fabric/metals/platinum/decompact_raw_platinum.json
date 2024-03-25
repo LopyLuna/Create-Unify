@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_unify:raw_platinum_block"
+    }
+  ],
+  "result": {
+    "item": "create_unify:raw_platinum",
+    "count": 9
+  },
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:ingots/platinum" ]
+        }
+      ]
+    }
+  ]
+}

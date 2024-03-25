@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_unify:raw_tin_block"
+    }
+  ],
+  "result": {
+    "item": "create_unify:raw_tin",
+    "count": 9
+  },
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:ingots/tin"
+        }
+      ]
+    }
+  ]
+}

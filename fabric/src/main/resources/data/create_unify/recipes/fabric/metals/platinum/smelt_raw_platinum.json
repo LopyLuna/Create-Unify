@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:raw_materials/platinum"
+  },
+  "result": "create_unify:platinum_ingot",
+  "experience": 0.7,
+  "cookingtime": 200,
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:raw_materials/platinum" ]
+        }
+      ]
+    }
+  ]
+}

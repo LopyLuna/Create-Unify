@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/cast_iron"
+    }
+  ],
+  "result": {
+    "item": "create_unify:cast_iron_ingot",
+    "count": 9
+  },
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:storage_blocks/cast_iron"
+        }
+      ]
+    }
+  ]
+}

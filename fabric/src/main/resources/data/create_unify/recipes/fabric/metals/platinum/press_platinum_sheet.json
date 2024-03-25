@@ -1,0 +1,29 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/platinum"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_unify:platinum_sheet"
+    }
+  ],
+
+  "fabric:conditions": [
+    {
+      "condition": "fabric:not",
+      "value": [
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "create_unify:enable_features" ]
+        },
+        {
+          "condition": "fabric:item_tags_populated",
+          "values": [ "forge:ingots/platinum" ]
+        }
+      ]
+    }
+  ]
+}

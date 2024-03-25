@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "create:crushed_raw_uranium"
+  },
+  "result": "create_unify:uranium_ingot",
+  "experience": 0.1,
+  "cookingtime": 200,
+
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": [
+        {
+          "type": "forge:tag_empty",
+          "tag": "create_unify:enable_features"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:raw_materials/uranium"
+        }
+      ]
+    }
+  ]
+}
