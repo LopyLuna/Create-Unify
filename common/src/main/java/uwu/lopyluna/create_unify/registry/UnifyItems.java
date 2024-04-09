@@ -1,7 +1,6 @@
 package uwu.lopyluna.create_unify.registry;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.item.TagDependentIngredientItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import io.github.fabricators_of_create.porting_lib.util.ItemGroupUtil;
 import me.alphamode.forgetags.Tags;
@@ -10,9 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
+import uwu.lopyluna.create_unify.ModContent;
 import uwu.lopyluna.create_unify.Unify;
-import uwu.lopyluna.create_unify.content.blocks.TagDependentBlockItem;
+import uwu.lopyluna.create_unify.content.blocks.BooleanDependentItem;
 
 import static com.simibubi.create.AllTags.AllItemTags.CREATE_INGOTS;
 import static com.simibubi.create.AllTags.AllItemTags.PLATES;
@@ -26,56 +25,56 @@ public class UnifyItems {
         @Override public ItemStack makeIcon() { return UnifyItems.TIN_INGOT.asStack(); }
     };
 
-    public static final ItemEntry<TagDependentIngredientItem>
-            TIN_INGOT = Ingot("tin", "Tin"),
-            ALUMINUM_INGOT = Ingot("aluminum", "Aluminum"),
-            LEAD_INGOT = Ingot("lead", "Lead"),
-            SILVER_INGOT = Ingot("silver", "Silver"),
-            PLATINUM_INGOT = Ingot("platinum", "Platinum"),
-            URANIUM_INGOT = Ingot("uranium", "Uranium"),
-            BRONZE_INGOT = Ingot("bronze", "Bronze"),
-            ELECTRUM_INGOT = Ingot("electrum", "Electrum"),
-            CAST_IRON_INGOT = Ingot("cast_iron", "Cast Iron"),
-            STEEL_INGOT = Ingot("steel", "Steel")
+    public static final ItemEntry<BooleanDependentItem>
+            TIN_INGOT = Ingot("tin", "Tin", ModContent.EnableTin()),
+            ALUMINUM_INGOT = Ingot("aluminum", "Aluminum", ModContent.EnableAluminum()),
+            LEAD_INGOT = Ingot("lead", "Lead", ModContent.EnableLead()),
+            SILVER_INGOT = Ingot("silver", "Silver", ModContent.EnableSilver()),
+            PLATINUM_INGOT = Ingot("platinum", "Platinum", ModContent.EnablePlatinum()),
+            URANIUM_INGOT = Ingot("uranium", "Uranium", ModContent.EnableUranium()),
+            BRONZE_INGOT = Ingot("bronze", "Bronze", ModContent.EnableBronze()),
+            ELECTRUM_INGOT = Ingot("electrum", "Electrum", ModContent.EnableElectrum()),
+            CAST_IRON_INGOT = Ingot("cast_iron", "Cast Iron", ModContent.EnableCastIron()),
+            STEEL_INGOT = Ingot("steel", "Steel", ModContent.EnableSteel())
     ;
 
-    public static final ItemEntry<TagDependentIngredientItem>
-            TIN_NUGGET = Nugget("tin", "Tin"),
-            ALUMINUM_NUGGET = Nugget("aluminum", "Aluminum"),
-            LEAD_NUGGET = Nugget("lead", "Lead"),
-            SILVER_NUGGET = Nugget("silver", "Silver"),
-            PLATINUM_NUGGET = Nugget("platinum", "Platinum"),
-            URANIUM_NUGGET = Nugget("uranium", "Uranium"),
-            BRONZE_NUGGET = Nugget("bronze", "Bronze"),
-            ELECTRUM_NUGGET = Nugget("electrum", "Electrum"),
-            CAST_IRON_NUGGET = Nugget("cast_iron", "Cast Iron"),
-            STEEL_NUGGET = Nugget("steel", "Steel")
+    public static final ItemEntry<BooleanDependentItem>
+            TIN_NUGGET = Nugget("tin", "Tin", ModContent.EnableTin()),
+            ALUMINUM_NUGGET = Nugget("aluminum", "Aluminum", ModContent.EnableAluminum()),
+            LEAD_NUGGET = Nugget("lead", "Lead", ModContent.EnableLead()),
+            SILVER_NUGGET = Nugget("silver", "Silver", ModContent.EnableSilver()),
+            PLATINUM_NUGGET = Nugget("platinum", "Platinum", ModContent.EnablePlatinum()),
+            URANIUM_NUGGET = Nugget("uranium", "Uranium", ModContent.EnableUranium()),
+            BRONZE_NUGGET = Nugget("bronze", "Bronze", ModContent.EnableBronze()),
+            ELECTRUM_NUGGET = Nugget("electrum", "Electrum", ModContent.EnableElectrum()),
+            CAST_IRON_NUGGET = Nugget("cast_iron", "Cast Iron", ModContent.EnableCastIron()),
+            STEEL_NUGGET = Nugget("steel", "Steel", ModContent.EnableSteel())
     ;
 
-    public static final ItemEntry<TagDependentIngredientItem>
-            ZINC_SHEET = Sheet("zinc", "Zinc"),
-            ANDESITE_ALLOY_SHEET = Sheet("andesite_alloy", "Andesite Alloy"),
-            NETHERITE_SHEET = Sheet("netherite", "Netherite"),
+    public static final ItemEntry<BooleanDependentItem>
+            ZINC_SHEET = Sheet("zinc", "Zinc", true),
+            ANDESITE_ALLOY_SHEET = Sheet("andesite_alloy", "Andesite Alloy", true),
+            NETHERITE_SHEET = Sheet("netherite", "Netherite", true),
 
-            TIN_SHEET = Sheet("tin", "Tin"),
-            ALUMINUM_SHEET = Sheet("aluminum", "Aluminum"),
-            LEAD_SHEET = Sheet("lead", "Lead"),
-            SILVER_SHEET = Sheet("silver", "Silver"),
-            PLATINUM_SHEET = Sheet("platinum", "Platinum"),
-            URANIUM_SHEET = Sheet("uranium", "Uranium"),
-            BRONZE_SHEET = Sheet("bronze", "Bronze"),
-            ELECTRUM_SHEET = Sheet("electrum", "Electrum"),
-            CAST_IRON_SHEET = Sheet("cast_iron", "Cast Iron"),
-            STEEL_SHEET = Sheet("steel", "Steel")
+            TIN_SHEET = Sheet("tin", "Tin", ModContent.EnableTin()),
+            ALUMINUM_SHEET = Sheet("aluminum", "Aluminum", ModContent.EnableAluminum()),
+            LEAD_SHEET = Sheet("lead", "Lead", ModContent.EnableLead()),
+            SILVER_SHEET = Sheet("silver", "Silver", ModContent.EnableSilver()),
+            PLATINUM_SHEET = Sheet("platinum", "Platinum", ModContent.EnablePlatinum()),
+            URANIUM_SHEET = Sheet("uranium", "Uranium", ModContent.EnableUranium()),
+            BRONZE_SHEET = Sheet("bronze", "Bronze", ModContent.EnableBronze()),
+            ELECTRUM_SHEET = Sheet("electrum", "Electrum", ModContent.EnableElectrum()),
+            CAST_IRON_SHEET = Sheet("cast_iron", "Cast Iron", ModContent.EnableCastIron()),
+            STEEL_SHEET = Sheet("steel", "Steel", ModContent.EnableSteel())
     ;
 
-    public static final ItemEntry<TagDependentIngredientItem>
-            RAW_TIN = RawOre("tin", "Tin"),
-            RAW_ALUMINUM = RawOre("aluminum", "Aluminum"),
-            RAW_LEAD = RawOre("lead", "Lead"),
-            RAW_SILVER = RawOre("silver", "Silver"),
-            RAW_PLATINUM = RawOre("platinum", "Platinum"),
-            RAW_URANIUM = RawOre("uranium", "Uranium")
+    public static final ItemEntry<BooleanDependentItem>
+            RAW_TIN = RawOre("tin", "Tin", ModContent.EnableTin()),
+            RAW_ALUMINUM = RawOre("aluminum", "Aluminum", ModContent.EnableAluminum()),
+            RAW_LEAD = RawOre("lead", "Lead", ModContent.EnableLead()),
+            RAW_SILVER = RawOre("silver", "Silver", ModContent.EnableSilver()),
+            RAW_PLATINUM = RawOre("platinum", "Platinum", ModContent.EnablePlatinum()),
+            RAW_URANIUM = RawOre("uranium", "Uranium", ModContent.EnableUranium())
     ;
 
     //BLOCKITEMS
@@ -111,8 +110,8 @@ public class UnifyItems {
     //        URANIUM_ORE_ITEM = OreBlockItem("uranium", UnifyBlocks.URANIUM_ORE.get())
     //;
 
-    public static ItemEntry<TagDependentIngredientItem> Ingot(String id, String lang) {
-        return REGISTRATE.item(id + "_ingot", props -> new TagDependentIngredientItem(props, UnifyTags.AllItemTags.ENABLE_FEATURES.tag))
+    public static ItemEntry<BooleanDependentItem> Ingot(String id, String lang, boolean aBoolean) {
+        return REGISTRATE.item(id + "_ingot", props -> new BooleanDependentItem(props, aBoolean))
                 .tag(forgeItemTag(id + "_ingots"))
                 .tag(forgeItemTag("ingots"))
                 .tag(forgeItemTag("ingots/" + id))
@@ -121,8 +120,8 @@ public class UnifyItems {
                 .register();
     }
 
-    public static ItemEntry<TagDependentIngredientItem> Nugget(String id, String lang) {
-        return REGISTRATE.item(id + "_nugget", props -> new TagDependentIngredientItem(props, UnifyTags.AllItemTags.ENABLE_FEATURES.tag))
+    public static ItemEntry<BooleanDependentItem> Nugget(String id, String lang, boolean aBoolean) {
+        return REGISTRATE.item(id + "_nugget", props -> new BooleanDependentItem(props, aBoolean))
                 .tag(forgeItemTag(id + "_nuggets"))
                 .tag(forgeItemTag("nuggets/" + id))
                 .tag(Tags.Items.NUGGETS)
@@ -130,8 +129,8 @@ public class UnifyItems {
                 .register();
     }
 
-    public static ItemEntry<TagDependentIngredientItem> Sheet(String id, String lang) {
-        return REGISTRATE.item(id + "_sheet", props -> new TagDependentIngredientItem(props, UnifyTags.AllItemTags.ENABLE_FEATURES.tag))
+    public static ItemEntry<BooleanDependentItem> Sheet(String id, String lang, boolean aBoolean) {
+        return REGISTRATE.item(id + "_sheet", props -> new BooleanDependentItem(props, aBoolean))
                 .tag(forgeItemTag(id + "_plates"))
                 .tag(forgeItemTag("plates/" + id))
                 .tag(PLATES.tag)
@@ -139,8 +138,8 @@ public class UnifyItems {
                 .register();
     }
 
-    public static ItemEntry<TagDependentIngredientItem> RawOre(String id, String lang) {
-        return REGISTRATE.item("raw_" + id, props -> new TagDependentIngredientItem(props, UnifyTags.AllItemTags.ENABLE_FEATURES.tag))
+    public static ItemEntry<BooleanDependentItem> RawOre(String id, String lang, boolean aBoolean) {
+        return REGISTRATE.item("raw_" + id, props -> new BooleanDependentItem(props, aBoolean))
                 .tag(forgeItemTag("raw_" + id + "_ores"))
                 .tag(forgeItemTag("raw_materials"))
                 .tag(forgeItemTag("raw_materials/" + id))
