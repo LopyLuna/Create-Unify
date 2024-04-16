@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {"id": "x:this_may_not_work_or_work_only_for_displaying", "required": false},
-
-    {"id": "example_modid:example_item", "required": false}
-  ]
-}
