@@ -14,6 +14,9 @@ public class UnifyImpl implements ModInitializer {
                 () -> () -> "{} is accessing Porting Lib on a Fabric server!"
                 ), Unify.NAME);
         // on fabric, Registrates must be explicitly finalized and registered.
+
+        // fabric exclusive
+        UnifyCE.register();
     }
 
     public static void finalizeRegistrate() {
