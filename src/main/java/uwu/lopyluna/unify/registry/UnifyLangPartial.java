@@ -2,11 +2,10 @@ package uwu.lopyluna.unify.registry;
 
 import java.util.function.BiConsumer;
 
-@SuppressWarnings({"unused"})
+@SuppressWarnings({"unused", "SameParameterValue"})
 public class UnifyLangPartial {
     public static void provideLang(BiConsumer<String, String> consumer) {
         consume(consumer, "itemGroup.unify.base", "Create: Unify");
-        consume(consumer, "itemGroup.unify.palettes", "Unify Building Blocks");
 
     }
 

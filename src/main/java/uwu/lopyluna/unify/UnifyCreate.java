@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 
-@SuppressWarnings({"removal","all"})
+@SuppressWarnings({"deprecation", "unused"})
 @Mod(UnifyCreate.MOD_ID)
 public class UnifyCreate
 {
@@ -51,10 +51,8 @@ public class UnifyCreate
     }
 
     static {
-        REGISTRATE.setTooltipModifierFactory(item -> {
-            return new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE)
-                    .andThen(TooltipModifier.mapNull(UnifyCreate.create(item)));
-        });
+        REGISTRATE.setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE)
+                .andThen(TooltipModifier.mapNull(UnifyCreate.create(item))));
     }
 
     public UnifyCreate()
@@ -68,7 +66,6 @@ public class UnifyCreate
 
         UnifySoundEvents.register(modEventBus);
         UnifyTags.init();
-        UnifyCreativeModeTabs.init();
         UnifyMaterialProvider.register();
 
         modEventBus.addListener(UnifyCreate::init);

@@ -13,9 +13,9 @@ public class UnifyMaterialProvider {
     public static final MaterialEntry SILVER = material("Silver", MaterialType.ORE);
     public static final MaterialEntry TIN = material("Tin", MaterialType.ORE);
     public static final MaterialEntry URANIUM = material("Uranium", MaterialType.ORE);
-    public static final MaterialEntry ALUMINUM = material("Aluminum", MaterialType.ORE);
+    public static final MaterialEntry ALUMINUM = material("Aluminum", "Bauxite", MaterialType.ORE);
     public static final MaterialEntry NICKEL = material("Nickel", MaterialType.ORE);
-    public static final MaterialEntry TUNGSTEN = material("Tungsten", MaterialType.ORE);
+    public static final MaterialEntry TUNGSTEN = material("Tungsten", "Wolfram", MaterialType.ORE);
 
     public static final MaterialEntry STEEL = material("Steel", MaterialType.ALLOY);
     public static final MaterialEntry ELECTRUM = material("Electrum", MaterialType.ALLOY);

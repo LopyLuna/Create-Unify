@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unify:raw_tungsten_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "unify:raw_tungsten"
+  }
+}
