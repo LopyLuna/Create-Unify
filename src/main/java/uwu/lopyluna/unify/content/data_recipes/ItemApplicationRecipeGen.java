@@ -2,6 +2,7 @@ package uwu.lopyluna.unify.content.data_recipes;
 
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.data.DataGenerator;
+import org.jetbrains.annotations.NotNull;
 
 public class ItemApplicationRecipeGen extends UnifyProcessingRecipeGen {
     public ItemApplicationRecipeGen(DataGenerator generator) {
@@ -10,7 +11,7 @@ public class ItemApplicationRecipeGen extends UnifyProcessingRecipeGen {
 
 
     @Override
-    protected AllRecipeTypes getRecipeType() {
+    protected @NotNull AllRecipeTypes getRecipeType() {
         return AllRecipeTypes.ITEM_APPLICATION;
     }
 }

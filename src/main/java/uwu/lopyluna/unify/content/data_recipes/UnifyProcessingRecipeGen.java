@@ -41,6 +41,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
                 return UnifyCreate.NAME + " Processing Recipes";
             }
 
+            @SuppressWarnings("all")
             @Override
             public void run(CachedOutput dc) throws IOException {
                 GENERATORS.forEach(g -> {

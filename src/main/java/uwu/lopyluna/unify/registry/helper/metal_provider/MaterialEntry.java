@@ -56,66 +56,76 @@ public class MaterialEntry {
         NonNullSupplier<? extends CreativeModeTab> tab = () -> UnifyCreativeModeTabs.BASE_CREATIVE_TAB;
         String id = name.toLowerCase().replace(" ", "_");
 
-        ItemEntry<Item> ingot = REGISTRATE.item(id + "_ingot", Item::new)
-                .lang(name + " Ingot")
-                .tag(forgeItemTag("ingots/" + id), forgeItemTag("ingots"))
-                .tab(tab)
-                .register();
-
-        ItemEntry<Item> nugget = REGISTRATE.item(id + "_nugget", Item::new)
-                .lang(name + " Nugget")
-                .tag(forgeItemTag("nuggets/" + id), forgeItemTag("nuggets"))
-                .recipe((c, p) -> {
-                    ShapedRecipeBuilder.shaped(ingot.get(), 1)
-                            .pattern("CCC")
-                            .pattern("CCC")
-                            .pattern("CCC")
-                            .define('C', c.get())
-                            .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
-                            .save(p, inputFromResult(ingot.get(), c.get()));
-                    ShapelessRecipeBuilder.shapeless(c.get(), 9)
-                            .requires(ingot.get())
-                            .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
-                            .save(p, inputFromResult(c.get(), ingot.get()));
-                })
-                .tab(tab)
-                .register();
-
-        ItemEntry<Item> sheet = REGISTRATE.item(id + "_sheet", Item::new)
-                .lang(name + " Sheet")
-                .tag(forgeItemTag("plates/" + id), forgeItemTag("plates"))
-                .tab(tab)
-                .register();
-
-        BlockEntry<Block> block = REGISTRATE.block(id + "_block", Block::new)
-                .lang(name + " Block")
-                .tag(forgeBlockTag("storage_blocks/" + id), forgeBlockTag("storage_blocks"))
-                .item()
-                .tab(tab)
-                .tag(forgeItemTag("storage_blocks/" + id), forgeItemTag("storage_blocks"))
-                .recipe((c, p) -> {
-                    ShapedRecipeBuilder.shaped(c.get(), 1)
-                            .pattern("CCC")
-                            .pattern("CCC")
-                            .pattern("CCC")
-                            .define('C', ingot.get())
-                            .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
-                            .save(p, inputFromResult(c.get(), ingot.get()));
-                    ShapelessRecipeBuilder.shapeless(ingot.get(), 9)
-                            .requires(c.get())
-                            .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
-                            .save(p, inputFromResult(ingot.get(), c.get()));
-                })
-                .build()
-                .register();
-
+        ItemEntry<Item> ingot;
+        BlockEntry<Block> block;
+        ItemEntry<Item> nugget;
+        ItemEntry<Item> sheet;
         ItemEntry<Item> rawMaterial;
         BlockEntry<Block> rawMaterialBlock;
-
         BlockEntry<Block> ore;
         BlockEntry<Block> oreDeepslate;
 
-        if (type == MaterialType.ORE) {
+        if (type == MaterialType.ORE || type == MaterialType.ALLOY || type == MaterialType.ALL) {
+            ingot = REGISTRATE.item(id + "_ingot", Item::new)
+                    .lang(name + " Ingot")
+                    .tag(forgeItemTag("ingots/" + id), forgeItemTag("ingots"))
+                    .tab(tab)
+                    .register();
+
+            nugget = REGISTRATE.item(id + "_nugget", Item::new)
+                    .lang(name + " Nugget")
+                    .tag(forgeItemTag("nuggets/" + id), forgeItemTag("nuggets"))
+                    .recipe((c, p) -> {
+                        ShapedRecipeBuilder.shaped(ingot.get(), 1)
+                                .pattern("CCC")
+                                .pattern("CCC")
+                                .pattern("CCC")
+                                .define('C', c.get())
+                                .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
+                                .save(p, inputFromResult(ingot.get(), c.get()));
+                        ShapelessRecipeBuilder.shapeless(c.get(), 9)
+                                .requires(ingot.get())
+                                .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
+                                .save(p, inputFromResult(c.get(), ingot.get()));
+                    })
+                    .tab(tab)
+                    .register();
+
+            sheet = REGISTRATE.item(id + "_sheet", Item::new)
+                    .lang(name + " Sheet")
+                    .tag(forgeItemTag("plates/" + id), forgeItemTag("plates"))
+                    .tab(tab)
+                    .register();
+
+            block = REGISTRATE.block(id + "_block", Block::new)
+                    .lang(name + " Block")
+                    .tag(forgeBlockTag("storage_blocks/" + id), forgeBlockTag("storage_blocks"))
+                    .item()
+                    .tab(tab)
+                    .tag(forgeItemTag("storage_blocks/" + id), forgeItemTag("storage_blocks"))
+                    .recipe((c, p) -> {
+                        ShapedRecipeBuilder.shaped(c.get(), 1)
+                                .pattern("CCC")
+                                .pattern("CCC")
+                                .pattern("CCC")
+                                .define('C', ingot.get())
+                                .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
+                                .save(p, inputFromResult(c.get(), ingot.get()));
+                        ShapelessRecipeBuilder.shapeless(ingot.get(), 9)
+                                .requires(c.get())
+                                .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
+                                .save(p, inputFromResult(ingot.get(), c.get()));
+                    })
+                    .build()
+                    .register();
+        } else {
+            ingot = null;
+            block = null;
+            nugget = null;
+            sheet = null;
+        }
+
+        if (type == MaterialType.ORE || type == MaterialType.ALL) {
             rawMaterial = REGISTRATE.item("raw_" + id, Item::new)
                     .lang("Raw " + oreLang)
                     .tag(forgeItemTag("raw_materials/" + id), forgeItemTag("raw_materials"))

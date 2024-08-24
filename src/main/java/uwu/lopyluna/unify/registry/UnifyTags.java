@@ -22,14 +22,13 @@ import net.minecraftforge.registries.IForgeRegistry;
 import uwu.lopyluna.unify.UnifyCreate;
 
 import java.util.Collections;
+import java.util.Objects;
 
-import static uwu.lopyluna.unify.registry.UnifyTags.NameSpace.FORGE;
-
-@SuppressWarnings({"all"})
+@SuppressWarnings({"unused"})
 public class UnifyTags {
 	public static <T> TagKey<T> optionalTag(IForgeRegistry<T> registry,
 		ResourceLocation id) {
-		return registry.tags()
+		return Objects.requireNonNull(registry.tags())
 			.createOptionalTagKey(id, Collections.emptySet());
 	}
 

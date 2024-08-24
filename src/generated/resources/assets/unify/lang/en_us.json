@@ -95,6 +95,5 @@
   "item.unify.wrought_iron_ingot": "Wrought Iron Ingot",
   "item.unify.wrought_iron_nugget": "Wrought Iron Nugget",
   "item.unify.wrought_iron_sheet": "Wrought Iron Sheet",
-  "itemGroup.unify.base": "Create: Unify",
-  "itemGroup.unify.palettes": "Unify Building Blocks"
+  "itemGroup.unify.base": "Create: Unify"
 }
