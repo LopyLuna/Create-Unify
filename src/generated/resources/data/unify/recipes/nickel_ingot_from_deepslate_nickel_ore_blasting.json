@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "unify:deepslate_nickel_ore"
+  },
+  "result": "unify:nickel_ingot"
+}

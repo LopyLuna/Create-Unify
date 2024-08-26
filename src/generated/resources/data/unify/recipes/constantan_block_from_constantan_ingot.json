@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "unify:constantan_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "unify:constantan_ingot"
+  }
+}

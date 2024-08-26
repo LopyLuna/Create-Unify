@@ -1,1 +1,7 @@
-// 1.19.2	2024-08-23T23:43:33.4610064	Create: Unify Processing Recipes
+// 1.19.2	2024-08-26T12:47:02.4106086	Create: Unify Processing Recipes
+62903027692c692014c8afa517a179ff9a4947e9 data/unify/recipes/compacting/cast_iron_ingot.json
+1333d9f14bbfd4e5d1e6a674a629872adc30c691 data/unify/recipes/compacting/steel_ingot.json
+bfdbc7b5fa9aaae62acb221eafe66be3911b2779 data/unify/recipes/mixing/bronze_ingot.json
+888653bfb8e3430bc9609a6febe623acc0c592a1 data/unify/recipes/mixing/constantan_ingot.json
+5679690f53d7fd461c2aa65bff79b700bf55338c data/unify/recipes/mixing/electrum_ingot.json
+d91facb606f4264a57fe2c1128edb1a0874539db data/unify/recipes/mixing/invar_ingot.json

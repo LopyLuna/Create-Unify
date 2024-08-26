@@ -40,8 +40,12 @@ public class UnifyTags {
 		return optionalTag(registry, new ResourceLocation("minecraft", path));
 	}
 
-	public static TagKey<Item> regTag(String pNamespace, String pPath) {
+	public static TagKey<Item> regItemTag(String pNamespace, String pPath) {
 		return optionalTag(ForgeRegistries.ITEMS, new ResourceLocation(pNamespace, pPath));
+	}
+
+	public static TagKey<Block> regBlockTag(String pNamespace, String pPath) {
+		return optionalTag(ForgeRegistries.BLOCKS, new ResourceLocation(pNamespace, pPath));
 	}
 
 	public static TagKey<Block> mcBlockTag(String path) {

@@ -1,0 +1,17 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "unify:wrought_iron_ingot"
+    },
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "results": [
+    {
+      "item": "unify:cast_iron_ingot"
+    }
+  ]
+}

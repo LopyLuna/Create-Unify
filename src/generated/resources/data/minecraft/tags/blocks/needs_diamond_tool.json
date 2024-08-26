@@ -1,0 +1,12 @@
+{
+  "values": [
+    "unify:platinum_block",
+    "unify:raw_platinum_block",
+    "unify:platinum_ore",
+    "unify:deepslate_platinum_ore",
+    "unify:tungsten_block",
+    "unify:raw_tungsten_block",
+    "unify:tungsten_ore",
+    "unify:deepslate_tungsten_ore"
+  ]
+}

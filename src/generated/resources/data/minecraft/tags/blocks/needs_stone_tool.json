@@ -1,0 +1,12 @@
+{
+  "values": [
+    "unify:tin_block",
+    "unify:raw_tin_block",
+    "unify:tin_ore",
+    "unify:deepslate_tin_ore",
+    "unify:aluminum_block",
+    "unify:raw_aluminum_block",
+    "unify:aluminum_ore",
+    "unify:deepslate_aluminum_ore"
+  ]
+}
