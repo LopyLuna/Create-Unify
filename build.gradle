@@ -22,7 +22,7 @@ apply plugin: 'org.spongepowered.mixin'
 jarJar.enable()
 
 group = 'uwu.lopyluna.unify'
-archivesBaseName = "Create-Unify-${artifact_minecraft_version}"
+archivesBaseName = "Create-Unify-${minecraft_version}"
 version = mod_version
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -108,14 +108,14 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
     //implementation fg.deobf("fr.iglee42:CreateCasing:${minecraft_version}-${create_casing_version}") { transitive = false }
 
-    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
-    runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
     //compileOnly fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_build}")
     //compileOnly fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tinkers_build}")
