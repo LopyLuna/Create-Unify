@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "C": {
       "item": "unify:uranium_ingot"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "unify:uranium_block"
-  }
+  },
+  "show_notification": true
 }

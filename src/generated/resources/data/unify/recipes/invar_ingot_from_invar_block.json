@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "C": {
       "item": "unify:invar_ingot"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "unify:invar_block"
-  }
+  },
+  "show_notification": true
 }

@@ -2,6 +2,7 @@ package uwu.lopyluna.unify.infrastructure.data;
 
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.data.event.GatherDataEvent;
 import uwu.lopyluna.unify.UnifyCreate;
 import uwu.lopyluna.unify.content.data_recipes.UnifyProcessingRecipeGen;
@@ -14,10 +15,11 @@ public class UnifyDatagen {
 		addExtraRegistrateData();
 
 		DataGenerator generator = event.getGenerator();
+		PackOutput output = generator.getPackOutput();
 
 		if (event.includeServer()) {
 
-			UnifyProcessingRecipeGen.registerAll(generator);
+			UnifyProcessingRecipeGen.registerAll(generator, output);
 		}
 	}
 

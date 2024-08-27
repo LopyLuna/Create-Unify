@@ -10,15 +10,16 @@ import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import uwu.lopyluna.unify.UnifyCreate;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
@@ -30,10 +31,10 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
     protected static final List<UnifyProcessingRecipeGen> GENERATORS = new ArrayList<>();
 
 
-    public static void registerAll(DataGenerator gen) {
-        GENERATORS.add(new ItemApplicationRecipeGen(gen));
-        GENERATORS.add(new MixingRecipeGen(gen));
-        GENERATORS.add(new PressingRecipeGen(gen));
+    public static void registerAll(DataGenerator gen, PackOutput output) {
+        GENERATORS.add(new ItemApplicationRecipeGen(output));
+        GENERATORS.add(new MixingRecipeGen(output));
+        GENERATORS.add(new PressingRecipeGen(output));
 
         gen.addProvider(true, new DataProvider() {
 
@@ -44,19 +45,15 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
             @SuppressWarnings("all")
             @Override
-            public void run(CachedOutput dc) throws IOException {
-                GENERATORS.forEach(g -> {
-                    try {
-                        g.run(dc);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+            public CompletableFuture<?> run(CachedOutput dc) {
+                return CompletableFuture.allOf(GENERATORS.stream()
+                        .map(gen -> gen.run(dc))
+                        .toArray(CompletableFuture[]::new));
             }
         });
     }
 
-    public UnifyProcessingRecipeGen(DataGenerator generator) {
+    public UnifyProcessingRecipeGen(PackOutput generator) {
         super(generator);
     }
 
@@ -113,11 +110,4 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
             return UnifyCreate.asResource(registryName.getPath() + suffix);
         };
     }
-
-    @Override
-    public String getName() {
-        return "Create's Processing Recipes: " + getRecipeType().getId()
-                .getPath();
-    }
-
 }
