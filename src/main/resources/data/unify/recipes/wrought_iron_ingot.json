@@ -1,10 +1,13 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "create:zinc_nugget"
+  },
   "base": {
-    "item": "minecraft:charcoal"
+    "item": "minecraft:iron_ingot"
   },
   "addition": {
-    "item": "minecraft:iron_ingot"
+    "item": "minecraft:charcoal"
   },
   "result": {
     "item": "unify:wrought_iron_ingot"

@@ -100,6 +100,10 @@ dependencies {
 
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
@@ -125,7 +129,7 @@ jar {
                 "Specification-Title"     : "unify",
                 "Specification-Vendor"    : "lopyluna",
                 "Specification-Version"   : "1",
-                'Implementation-Title'    : project.jar.baseName,
+                'Implementation-Title'    : project.jar.archiveBaseName,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "lopyluna",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),

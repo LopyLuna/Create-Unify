@@ -2,7 +2,7 @@ package uwu.lopyluna.unify.content.data_recipes;
 
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 import uwu.lopyluna.unify.registry.UnifyMaterialProvider;
@@ -24,7 +24,7 @@ public class PressingRecipeGen extends UnifyProcessingRecipeGen {
             .requiresHeat(HeatCondition.HEATED))
     ;
 
-    public PressingRecipeGen(DataGenerator generator) {
+    public PressingRecipeGen(PackOutput generator) {
         super(generator);
     }
 

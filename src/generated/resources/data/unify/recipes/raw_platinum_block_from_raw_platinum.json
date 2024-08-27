@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "C": {
       "item": "unify:raw_platinum"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "unify:raw_platinum_block"
-  }
+  },
+  "show_notification": true
 }

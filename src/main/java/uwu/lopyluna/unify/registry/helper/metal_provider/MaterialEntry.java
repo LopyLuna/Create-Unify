@@ -4,10 +4,11 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -21,7 +22,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -71,7 +72,8 @@ public class MaterialEntry {
 
     public static MaterialEntry material(String name, String oreLang, MaterialType type, TagKey<Block> needTierLevel, boolean beaconCompatible, SoundType pSoundType) {
 
-        NonNullSupplier<? extends CreativeModeTab> tab = () -> UnifyCreativeModeTabs.BASE_CREATIVE_TAB;
+        ResourceKey<CreativeModeTab> tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
+        //ResourceKey<CreativeModeTab> tab = CreativeModeTabs.INGREDIENTS;
         String id = name.toLowerCase().replace(" ", "_");
 
         ItemEntry<Item> ingot;
@@ -83,6 +85,7 @@ public class MaterialEntry {
         BlockEntry<Block> ore;
         BlockEntry<Block> oreDeepslate;
 
+        assert tab != null;
         if (type == MaterialType.ORE || type == MaterialType.ALLOY || type == MaterialType.ALL) {
             ingot = REGISTRATE.item(id + "_ingot", Item::new)
                     .lang(name + " Ingot")
@@ -95,14 +98,14 @@ public class MaterialEntry {
                     .lang(name + " Nugget")
                     .tag(forgeItemTag("nuggets/" + id), forgeItemTag("nuggets"))
                     .recipe((c, p) -> {
-                        ShapedRecipeBuilder.shaped(ingot.get(), 1)
+                        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ingot.get(), 1)
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .define('C', c.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(ingot.get(), c.get()));
-                        ShapelessRecipeBuilder.shapeless(c.get(), 9)
+                        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, c.get(), 9)
                                 .requires(ingot.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()));
@@ -128,14 +131,14 @@ public class MaterialEntry {
                     .tab(tab)
                     .tag(forgeItemTag("storage_blocks/" + id), forgeItemTag("storage_blocks"))
                     .recipe((c, p) -> {
-                        ShapedRecipeBuilder.shaped(c.get(), 1)
+                        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, c.get(), 1)
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .define('C', ingot.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(ingot.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()));
-                        ShapelessRecipeBuilder.shapeless(ingot.get(), 9)
+                        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingot.get(), 9)
                                 .requires(c.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(ingot.get(), c.get()));
@@ -155,10 +158,10 @@ public class MaterialEntry {
                     .tag(forgeItemTag("raw_materials/" + id), forgeItemTag("raw_materials"))
                     .tab(tab)
                     .recipe((c, p) -> {
-                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 200)
+                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 200)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()));
-                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 100)
+                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 100)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()) + "_blasting");
                     })
@@ -175,14 +178,14 @@ public class MaterialEntry {
                     .tab(tab)
                     .tag(forgeItemTag("storage_blocks/raw_" + id), forgeItemTag("storage_blocks"))
                     .recipe((c, p) -> {
-                        ShapedRecipeBuilder.shaped(c.get(), 1)
+                        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, c.get(), 1)
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .pattern("CCC")
                                 .define('C', rawMaterial.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(rawMaterial.get()))
                                 .save(p, inputFromResult(rawMaterial.get(), c.get()));
-                        ShapelessRecipeBuilder.shapeless(rawMaterial.get(), 9)
+                        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, rawMaterial.get(), 9)
                                 .requires(c.get())
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), rawMaterial.get()));
@@ -193,13 +196,13 @@ public class MaterialEntry {
             ore = REGISTRATE.block(id + "_ore", Block::new)
                     .lang(oreLang + " Ore")
                     .initialProperties(() -> Blocks.GOLD_ORE)
-                    .properties(p -> p.color(MaterialColor.METAL)
+                    .properties(p -> p.mapColor(MapColor.STONE)
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.STONE))
                     .transform(pickaxeOnly())
                     .loot((lt, b) -> lt.add(b,
                             RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
-                                    RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(rawMaterial.get())
+                                    lt.applyExplosionDecay(b, LootItem.lootTableItem(rawMaterial.get())
                                             .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
                     .tag(needTierLevel)
                     .tag(forgeBlockTag("ores/" + id), forgeBlockTag("ores"), forgeBlockTag("ores_in_ground/stone"))
@@ -207,10 +210,10 @@ public class MaterialEntry {
                     .tab(tab)
                     .tag(forgeItemTag("ores/" + id), forgeItemTag("ores"), forgeItemTag("ores_in_ground/stone"))
                     .recipe((c, p) -> {
-                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 200)
+                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 200)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()));
-                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 100)
+                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 100)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()) + "_blasting");
                     })
@@ -220,23 +223,23 @@ public class MaterialEntry {
             oreDeepslate = REGISTRATE.block("deepslate_" + id + "_ore", Block::new)
                     .lang("Deepslate " + oreLang + " Ore")
                     .initialProperties(() -> Blocks.DEEPSLATE_GOLD_ORE)
-                    .properties(p -> p.color(MaterialColor.STONE)
+                    .properties(p -> p.mapColor(MapColor.DEEPSLATE)
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.DEEPSLATE))
                     .transform(pickaxeOnly())
                     .loot((lt, b) -> lt.add(b,
                             RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
-                                    RegistrateBlockLootTables.applyExplosionDecay(b, LootItem.lootTableItem(rawMaterial.get())
+                                    lt.applyExplosionDecay(b, LootItem.lootTableItem(rawMaterial.get())
                                             .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))
                     .tag(needTierLevel)
                     .tag(forgeBlockTag("ores/" + id), forgeBlockTag("ores"), forgeBlockTag("ores_in_ground/deepslate"))
                     .item()
                     .tag(forgeItemTag("ores/" + id), forgeItemTag("ores"), forgeItemTag("ores_in_ground/deepslate"))
                     .recipe((c, p) -> {
-                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 200)
+                        SimpleCookingRecipeBuilder.smelting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 200)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()));
-                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), ingot.get(), 0.7F, 100)
+                        SimpleCookingRecipeBuilder.blasting(Ingredient.of(c.get().asItem()), RecipeCategory.MISC, ingot.get(), 0.7F, 100)
                                 .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(c.get()))
                                 .save(p, inputFromResult(c.get(), ingot.get()) + "_blasting");
                     })
