@@ -1,8 +1,15 @@
 package uwu.lopyluna.unify.registry;
 
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import uwu.lopyluna.unify.registry.helper.metal_provider.MaterialEntry;
 import uwu.lopyluna.unify.registry.helper.metal_provider.MaterialType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static uwu.lopyluna.unify.registry.helper.metal_provider.MaterialEntry.*;
 
@@ -29,6 +36,47 @@ public class UnifyMaterialProvider {
 
 
 
+    public static List<Item> getEntries() {
+        List<Item> entry = new ArrayList<>();
+        PLATINUM.itemEntries.stream().map(i -> i.get().asItem()).forEachOrdered(entry::add);
+
+        PLATINUM.blockEntries.stream().map(i -> i.get().asItem()).forEachOrdered(entry::add);
+
+        for (ItemEntry<Item> item : PLATINUM.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : LEAD.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : SILVER.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : TIN.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : URANIUM.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : ALUMINUM.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : NICKEL.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : TUNGSTEN.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : STEEL.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : ELECTRUM.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : BRONZE.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : CAST_IRON.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : INVAR.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : CONSTANTAN.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : WROUGHT_IRON.itemEntries) {entry.add(item.get());}
+        for (ItemEntry<Item> item : TARNISHED_GOLD.itemEntries) {entry.add(item.get());}
+
+        for (BlockEntry<Block> block : PLATINUM.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : LEAD.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : SILVER.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : TIN.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : URANIUM.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : ALUMINUM.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : NICKEL.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : TUNGSTEN.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : STEEL.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : ELECTRUM.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : BRONZE.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : CAST_IRON.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : INVAR.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : CONSTANTAN.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : WROUGHT_IRON.blockEntries) {entry.add(block.get().asItem());}
+        for (BlockEntry<Block> block : TARNISHED_GOLD.blockEntries) {entry.add(block.get().asItem());}
+        return entry;
+    }
 
     public static void register() {}
 }
