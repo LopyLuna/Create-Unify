@@ -113,6 +113,15 @@ dependencies {
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
 
     runtimeOnly fg.deobf("maven.modrinth:createaddition:1.20.1-1.2.4e")
+    //runtimeOnly fg.deobf("maven.modrinth:thermal-foundation:11.0.6")
+    //runtimeOnly fg.deobf("maven.modrinth:extreme-reactors:1.20.1-2.0.84")
+    //runtimeOnly fg.deobf("maven.modrinth:ad-astra:1.15.18")
+    //LIBRARIES FOR MODS ABOVE
+    //runtimeOnly fg.deobf("maven.modrinth:zerocore:1.20.1-2.1.45")
+    //runtimeOnly fg.deobf("maven.modrinth:resourceful-config:2.1.2")
+    //runtimeOnly fg.deobf("maven.modrinth:resourceful-lib:2.1.29")
+    //runtimeOnly fg.deobf("maven.modrinth:botarium:2.3.4")
+    //runtimeOnly fg.deobf("maven.modrinth:cofh-core:11.0.2")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 

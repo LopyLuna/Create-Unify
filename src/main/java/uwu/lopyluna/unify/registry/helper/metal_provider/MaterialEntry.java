@@ -53,10 +53,11 @@ public class MaterialEntry {
     //
     public List<ItemEntry<Item>> itemEntries;
     public List<BlockEntry<Block>> blockEntries;
+    public List<TagKey<Item>> tagKeys;
 
     public MaterialEntry(ItemEntry<Item> ingot, ItemEntry<Item> nugget, ItemEntry<Item> sheet, BlockEntry<Block> block,
                       ItemEntry<Item> rawMaterial, BlockEntry<Block> rawMaterialBlock, BlockEntry<Block> ore, BlockEntry<Block> oreDeepslate,
-                         List<ItemEntry<Item>> itemEntries, List<BlockEntry<Block>> blockEntries) {
+                         List<ItemEntry<Item>> itemEntries, List<BlockEntry<Block>> blockEntries, List<TagKey<Item>> tagKeys) {
         this.ingot = ingot;
         this.nugget = nugget;
         this.sheet = sheet;
@@ -67,6 +68,7 @@ public class MaterialEntry {
         this.oreDeepslate = oreDeepslate;
         this.itemEntries = itemEntries;
         this.blockEntries = blockEntries;
+        this.tagKeys = tagKeys;
     }
 
     public static TagKey<Block> stoneTool = BlockTags.NEEDS_STONE_TOOL;
@@ -97,6 +99,8 @@ public class MaterialEntry {
         List<ItemEntry<Item>> itemEntries = new ArrayList<>();
         List<BlockEntry<Block>> blockEntries = new ArrayList<>();
 
+        List<TagKey<Item>> tagKeys = new ArrayList<>();
+
         assert tab != null;
         if (ore || alloy || all) {
 
@@ -107,6 +111,7 @@ public class MaterialEntry {
                     .tab(tab)
                     .register();
             itemEntries.add(ingot);
+            tagKeys.add(forgeItemTag("ingots/" + id));
 
             nugget = REGISTRATE.item(id + "_nugget", Item::new)
                     .lang(name + " Nugget")
@@ -127,6 +132,7 @@ public class MaterialEntry {
                     .tab(tab)
                     .register();
             itemEntries.add(nugget);
+            tagKeys.add(forgeItemTag("nuggets/" + id));
 
             sheet = REGISTRATE.item(id + "_sheet", Item::new)
                     .lang(name + " Sheet")
@@ -134,6 +140,7 @@ public class MaterialEntry {
                     .tab(tab)
                     .register();
             itemEntries.add(sheet);
+            tagKeys.add(forgeItemTag("plates/" + id));
 
             block = REGISTRATE.block(id + "_block", Block::new)
                     .lang(name + " Block")
@@ -162,6 +169,7 @@ public class MaterialEntry {
                     .build()
                     .register();
             blockEntries.add(block);
+            tagKeys.add(forgeItemTag("storage_blocks/" + id));
         } else {
             ingot = null;
             nugget = null;
@@ -184,6 +192,7 @@ public class MaterialEntry {
                     })
                     .register();
             itemEntries.add(rawMaterial);
+            tagKeys.add(forgeItemTag("raw_materials/" + id));
 
             rawMaterialBlock = REGISTRATE.block("raw_" + id + "_block", Block::new)
                     .lang("Block of Raw " + oreLang)
@@ -211,6 +220,7 @@ public class MaterialEntry {
                     .build()
                     .register();
             blockEntries.add(rawMaterialBlock);
+            tagKeys.add(forgeItemTag("storage_blocks/raw_" + id));
 
             oreStone = REGISTRATE.block(id + "_ore", Block::new)
                     .lang(oreLang + " Ore")
@@ -239,6 +249,7 @@ public class MaterialEntry {
                     .build()
                     .register();
             blockEntries.add(oreStone);
+            tagKeys.add(forgeItemTag("ores/" + id));
 
             oreDeepslate = REGISTRATE.block("deepslate_" + id + "_ore", Block::new)
                     .lang("Deepslate " + oreLang + " Ore")
@@ -275,7 +286,7 @@ public class MaterialEntry {
             oreDeepslate = null;
         }
 
-        return new MaterialEntry(ingot, nugget, sheet, block, rawMaterial, rawMaterialBlock, oreStone, oreDeepslate, itemEntries, blockEntries);
+        return new MaterialEntry(ingot, nugget, sheet, block, rawMaterial, rawMaterialBlock, oreStone, oreDeepslate, itemEntries, blockEntries, tagKeys);
     }
 
     public static ResourceLocation inputFromResult(ItemLike input, ItemLike result) {
