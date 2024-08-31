@@ -29,6 +29,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import uwu.lopyluna.unify.UnifyCreate;
 import uwu.lopyluna.unify.registry.UnifyCreativeModeTabs;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -49,9 +51,12 @@ public class MaterialEntry {
     public BlockEntry<Block> ore;
     public BlockEntry<Block> oreDeepslate;
     //
+    public List<ItemEntry<Item>> itemEntries;
+    public List<BlockEntry<Block>> blockEntries;
 
     public MaterialEntry(ItemEntry<Item> ingot, ItemEntry<Item> nugget, ItemEntry<Item> sheet, BlockEntry<Block> block,
-                      ItemEntry<Item> rawMaterial, BlockEntry<Block> rawMaterialBlock, BlockEntry<Block> ore, BlockEntry<Block> oreDeepslate) {
+                      ItemEntry<Item> rawMaterial, BlockEntry<Block> rawMaterialBlock, BlockEntry<Block> ore, BlockEntry<Block> oreDeepslate,
+                         List<ItemEntry<Item>> itemEntries, List<BlockEntry<Block>> blockEntries) {
         this.ingot = ingot;
         this.nugget = nugget;
         this.sheet = sheet;
@@ -60,6 +65,8 @@ public class MaterialEntry {
         this.rawMaterialBlock = rawMaterialBlock;
         this.ore = ore;
         this.oreDeepslate = oreDeepslate;
+        this.itemEntries = itemEntries;
+        this.blockEntries = blockEntries;
     }
 
     public static TagKey<Block> stoneTool = BlockTags.NEEDS_STONE_TOOL;
@@ -75,6 +82,9 @@ public class MaterialEntry {
         ResourceKey<CreativeModeTab> tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
         //ResourceKey<CreativeModeTab> tab = CreativeModeTabs.INGREDIENTS;
         String id = name.toLowerCase().replace(" ", "_");
+        boolean ore = type == MaterialType.ORE;
+        boolean alloy = type == MaterialType.ALLOY;
+        boolean all = type == MaterialType.ALL;
 
         ItemEntry<Item> ingot;
         BlockEntry<Block> block;
@@ -82,17 +92,21 @@ public class MaterialEntry {
         ItemEntry<Item> sheet;
         ItemEntry<Item> rawMaterial;
         BlockEntry<Block> rawMaterialBlock;
-        BlockEntry<Block> ore;
+        BlockEntry<Block> oreStone;
         BlockEntry<Block> oreDeepslate;
+        List<ItemEntry<Item>> itemEntries = new ArrayList<>();
+        List<BlockEntry<Block>> blockEntries = new ArrayList<>();
 
         assert tab != null;
-        if (type == MaterialType.ORE || type == MaterialType.ALLOY || type == MaterialType.ALL) {
+        if (ore || alloy || all) {
+
             ingot = REGISTRATE.item(id + "_ingot", Item::new)
                     .lang(name + " Ingot")
                     .tag(beaconCompatible ? ItemTags.BEACON_PAYMENT_ITEMS : regItemTag("unify", "raw_beacon"))
                     .tag(forgeItemTag("ingots/" + id), forgeItemTag("ingots"))
                     .tab(tab)
                     .register();
+            itemEntries.add(ingot);
 
             nugget = REGISTRATE.item(id + "_nugget", Item::new)
                     .lang(name + " Nugget")
@@ -112,12 +126,14 @@ public class MaterialEntry {
                     })
                     .tab(tab)
                     .register();
+            itemEntries.add(nugget);
 
             sheet = REGISTRATE.item(id + "_sheet", Item::new)
                     .lang(name + " Sheet")
                     .tag(forgeItemTag("plates/" + id), forgeItemTag("plates"))
                     .tab(tab)
                     .register();
+            itemEntries.add(sheet);
 
             block = REGISTRATE.block(id + "_block", Block::new)
                     .lang(name + " Block")
@@ -145,6 +161,7 @@ public class MaterialEntry {
                     })
                     .build()
                     .register();
+            blockEntries.add(block);
         } else {
             ingot = null;
             nugget = null;
@@ -152,7 +169,7 @@ public class MaterialEntry {
             block = null;
         }
 
-        if (type == MaterialType.ORE || type == MaterialType.ALL) {
+        if (ore || all) {
             rawMaterial = REGISTRATE.item("raw_" + id, Item::new)
                     .lang("Raw " + oreLang)
                     .tag(forgeItemTag("raw_materials/" + id), forgeItemTag("raw_materials"))
@@ -166,6 +183,7 @@ public class MaterialEntry {
                                 .save(p, inputFromResult(c.get(), ingot.get()) + "_blasting");
                     })
                     .register();
+            itemEntries.add(rawMaterial);
 
             rawMaterialBlock = REGISTRATE.block("raw_" + id + "_block", Block::new)
                     .lang("Block of Raw " + oreLang)
@@ -192,8 +210,9 @@ public class MaterialEntry {
                     })
                     .build()
                     .register();
+            blockEntries.add(rawMaterialBlock);
 
-            ore = REGISTRATE.block(id + "_ore", Block::new)
+            oreStone = REGISTRATE.block(id + "_ore", Block::new)
                     .lang(oreLang + " Ore")
                     .initialProperties(() -> Blocks.GOLD_ORE)
                     .properties(p -> p.mapColor(MapColor.STONE)
@@ -219,6 +238,7 @@ public class MaterialEntry {
                     })
                     .build()
                     .register();
+            blockEntries.add(oreStone);
 
             oreDeepslate = REGISTRATE.block("deepslate_" + id + "_ore", Block::new)
                     .lang("Deepslate " + oreLang + " Ore")
@@ -245,15 +265,17 @@ public class MaterialEntry {
                     })
                     .build()
                     .register();
+            blockEntries.add(oreDeepslate);
+
         } else {
             rawMaterial = null;
             rawMaterialBlock = null;
 
-            ore = null;
+            oreStone = null;
             oreDeepslate = null;
         }
 
-        return new MaterialEntry(ingot, nugget, sheet, block, rawMaterial, rawMaterialBlock, ore, oreDeepslate);
+        return new MaterialEntry(ingot, nugget, sheet, block, rawMaterial, rawMaterialBlock, oreStone, oreDeepslate, itemEntries, blockEntries);
     }
 
     public static ResourceLocation inputFromResult(ItemLike input, ItemLike result) {
