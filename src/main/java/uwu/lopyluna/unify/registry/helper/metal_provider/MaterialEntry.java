@@ -26,7 +26,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraftforge.registries.ForgeRegistries;
-import uwu.lopyluna.unify.UnifyCreate;
+import uwu.lopyluna.unify.Unify;
 import uwu.lopyluna.unify.registry.UnifyCreativeModeTabs;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
-import static uwu.lopyluna.unify.UnifyCreate.REGISTRATE;
+import static uwu.lopyluna.unify.Unify.REGISTRATE;
 import static uwu.lopyluna.unify.registry.UnifyTags.*;
 
 public class MaterialEntry {
@@ -92,6 +92,8 @@ public class MaterialEntry {
         BlockEntry<Block> block;
         ItemEntry<Item> nugget;
         ItemEntry<Item> sheet;
+        ItemEntry<Item> rod;
+        ItemEntry<Item> wire;
         ItemEntry<Item> rawMaterial;
         BlockEntry<Block> rawMaterialBlock;
         BlockEntry<Block> oreStone;
@@ -141,6 +143,25 @@ public class MaterialEntry {
                     .register();
             itemEntries.add(sheet);
             tagKeys.add(forgeItemTag("plates/" + id));
+
+            rod = REGISTRATE.item(id + "_rod", Item::new)
+                    .lang(name + " Rod")
+                    .model((c, p) -> p.withExistingParent(c.getId().getPath(),
+                            new ResourceLocation("item/handheld")).texture("layer0",
+                            new ResourceLocation(Unify.MOD_ID,"item/" + c.getId().getPath())))
+                    .tag(forgeItemTag("rods/" + id), forgeItemTag("rods"))
+                    .tab(tab)
+                    .register();
+            itemEntries.add(rod);
+            tagKeys.add(forgeItemTag("rods/" + id));
+
+            wire = REGISTRATE.item(id + "_wire", Item::new)
+                    .lang(name + " Wire")
+                    .tag(forgeItemTag("wires/" + id), forgeItemTag("wires"))
+                    .tab(tab)
+                    .register();
+            itemEntries.add(wire);
+            tagKeys.add(forgeItemTag("wires/" + id));
 
             block = REGISTRATE.block(id + "_block", Block::new)
                     .lang(name + " Block")
@@ -290,7 +311,7 @@ public class MaterialEntry {
     }
 
     public static ResourceLocation inputFromResult(ItemLike input, ItemLike result) {
-        return UnifyCreate.asResource(safeId(result) + "_from_" + safeId(input));
+        return Unify.asResource(safeId(result) + "_from_" + safeId(input));
     }
     public static String safeId(ItemLike registryEntry) {
         return safeName(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(registryEntry.asItem())));

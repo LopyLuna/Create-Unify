@@ -19,7 +19,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
-import uwu.lopyluna.unify.UnifyCreate;
+import uwu.lopyluna.unify.Unify;
 
 import java.util.Collections;
 import java.util.Objects;
@@ -70,7 +70,7 @@ public class UnifyTags {
 
 	public enum NameSpace {
 		
-		MOD(UnifyCreate.MOD_ID, false, true),
+		MOD(Unify.MOD_ID, false, true),
 		CREATE("create"),
 		FORGE("forge"),
 		TIC("tconstruct"),

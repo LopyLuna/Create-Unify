@@ -14,7 +14,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import uwu.lopyluna.unify.UnifyCreate;
+import uwu.lopyluna.unify.Unify;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
             @Override
             public String getName() {
-                return UnifyCreate.NAME + " Processing Recipes";
+                return Unify.NAME + " Processing Recipes";
             }
 
             @SuppressWarnings("all")
@@ -74,7 +74,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
     <T extends ProcessingRecipe<?>> GeneratedRecipe create(Supplier<ItemLike> singleIngredient,
                                                            UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
-        return create(UnifyCreate.MOD_ID, singleIngredient, transform);
+        return create(Unify.MOD_ID, singleIngredient, transform);
     }
 
     protected <T extends ProcessingRecipe<?>> GeneratedRecipe createWithDeferredId(Supplier<ResourceLocation> name,
@@ -94,7 +94,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
     <T extends ProcessingRecipe<?>> GeneratedRecipe create(String name,
                                                            UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
-        return create(UnifyCreate.asResource(name), transform);
+        return create(Unify.asResource(name), transform);
     }
 
     protected abstract IRecipeTypeInfo getRecipeType();
@@ -107,7 +107,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
         return () -> {
             ResourceLocation registryName = RegisteredObjects.getKeyOrThrow(item.get()
                     .asItem());
-            return UnifyCreate.asResource(registryName.getPath() + suffix);
+            return Unify.asResource(registryName.getPath() + suffix);
         };
     }
 }

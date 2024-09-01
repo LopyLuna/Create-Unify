@@ -28,8 +28,8 @@ import java.util.Random;
 
 
 @SuppressWarnings({"deprecation", "unused"})
-@Mod(UnifyCreate.MOD_ID)
-public class UnifyCreate
+@Mod(Unify.MOD_ID)
+public class Unify
 {
     public static final String NAME = "Create: Unify";
     public static final String MOD_ID = "unify";
@@ -52,10 +52,10 @@ public class UnifyCreate
 
     static {
         REGISTRATE.setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE)
-                .andThen(TooltipModifier.mapNull(UnifyCreate.create(item))));
+                .andThen(TooltipModifier.mapNull(Unify.create(item))));
     }
 
-    public UnifyCreate()
+    public Unify()
     {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
@@ -69,7 +69,7 @@ public class UnifyCreate
         UnifyTags.init();
         UnifyMaterialProvider.register();
 
-        modEventBus.addListener(UnifyCreate::init);
+        modEventBus.addListener(Unify::init);
         modEventBus.addListener(EventPriority.LOWEST, UnifyDatagen::gatherData);
 
         // Register ourselves for server and other game events we are interested in

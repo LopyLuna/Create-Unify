@@ -96,7 +96,6 @@ public class UnifyEvent {
         modIDs.add("createindustry");
         modIDs.add("create_new_age");
         modIDs.add("alloyed");
-        modIDs.add("createdeco");
         modIDs.add("creatingspace");
         modIDs.add("ad_astra");
 
