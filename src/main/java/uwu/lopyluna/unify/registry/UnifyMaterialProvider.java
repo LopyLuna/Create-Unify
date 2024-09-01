@@ -2,6 +2,7 @@ package uwu.lopyluna.unify.registry;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,10 +13,18 @@ import uwu.lopyluna.unify.registry.helper.metal_provider.MaterialType;
 import java.util.ArrayList;
 import java.util.List;
 
+import static uwu.lopyluna.unify.Unify.REGISTRATE;
+import static uwu.lopyluna.unify.registry.UnifyTags.forgeItemTag;
 import static uwu.lopyluna.unify.registry.helper.metal_provider.MaterialEntry.*;
 
 @SuppressWarnings({"unused"})
 public class UnifyMaterialProvider {
+
+    public static final ItemEntry<Item> GAY_INGOT = REGISTRATE.item("gay_ingot", Item::new)
+            .lang("Gay Ingot")
+            .tag(ItemTags.BEACON_PAYMENT_ITEMS)
+            .tag(forgeItemTag("ingots/gay"), forgeItemTag("ingots"))
+            .register();
 
     public static final MaterialEntry PLATINUM = material("Platinum", MaterialType.ORE, diamondTool, true, SoundType.METAL);
     public static final MaterialEntry LEAD = material("Lead", MaterialType.ORE, ironTool, true, SoundType.METAL);
