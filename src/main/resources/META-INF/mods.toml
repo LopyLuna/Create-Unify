@@ -35,3 +35,64 @@ YIPPEE WASSUP THIS HURTS MY HEAD LMAO
     versionRange="[0.5.1.f,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.unify]]
+    modId="createaddition"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="createbigcannons"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="createdeco"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="create_dd"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="northstar"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="createindustry"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="create_new_age"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="alloyed"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="creatingspace"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"
+[[dependencies.unify]]
+    modId="ad_astra"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="BEFORE"
+    side="SERVER"

@@ -4,7 +4,7 @@ import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.data.event.GatherDataEvent;
-import uwu.lopyluna.unify.UnifyCreate;
+import uwu.lopyluna.unify.Unify;
 import uwu.lopyluna.unify.content.data_recipes.UnifyProcessingRecipeGen;
 import uwu.lopyluna.unify.registry.UnifyLangPartial;
 
@@ -26,7 +26,7 @@ public class UnifyDatagen {
 	private static void addExtraRegistrateData() {
 		UnifyRegistrateTags.addGenerators();
 
-		UnifyCreate.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
+		Unify.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
 			BiConsumer<String, String> langConsumer = provider::add;
 
 			providePartialLang(langConsumer);

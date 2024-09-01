@@ -1,0 +1,20 @@
+{
+  "values": [
+    "unify:platinum_wire",
+    "unify:lead_wire",
+    "unify:silver_wire",
+    "unify:tin_wire",
+    "unify:uranium_wire",
+    "unify:aluminum_wire",
+    "unify:nickel_wire",
+    "unify:tungsten_wire",
+    "unify:steel_wire",
+    "unify:electrum_wire",
+    "unify:bronze_wire",
+    "unify:cast_iron_wire",
+    "unify:invar_wire",
+    "unify:constantan_wire",
+    "unify:wrought_iron_wire",
+    "unify:tarnished_gold_wire"
+  ]
+}

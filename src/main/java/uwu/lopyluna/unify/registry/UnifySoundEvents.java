@@ -8,12 +8,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import uwu.lopyluna.unify.UnifyCreate;
+import uwu.lopyluna.unify.Unify;
 
 @SuppressWarnings("unused")
 public class UnifySoundEvents {
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
-			DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, UnifyCreate.MOD_ID);
+			DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Unify.MOD_ID);
 
 	//public static RegistryObject<SoundEvent> CREATVEDITE_BREAK = registerSoundEvent("creatvedite_break");*
 	//public static RegistryObject<SoundEvent> CREATVEDITE_STEP = registerSoundEvent("creatvedite_step");*
@@ -30,7 +30,7 @@ public class UnifySoundEvents {
 	}
 
 	private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
-		return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(UnifyCreate.MOD_ID, name)));
+		return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Unify.MOD_ID, name)));
 	}
 
 	public static void register(IEventBus eventBus) {
