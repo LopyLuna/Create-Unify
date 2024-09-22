@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "C": {
       "item": "unify:nickel_nugget"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "unify:nickel_ingot"
-  },
-  "show_notification": true
+  }
 }

@@ -2,7 +2,7 @@ package uwu.lopyluna.unify.content.data_recipes;
 
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 import uwu.lopyluna.unify.registry.UnifyMaterialProvider;
@@ -34,7 +34,7 @@ public class MixingRecipeGen extends UnifyProcessingRecipeGen {
                     .requiresHeat(HeatCondition.HEATED))
     ;
 
-    public MixingRecipeGen(PackOutput generator) {
+    public MixingRecipeGen(DataGenerator generator) {
         super(generator);
     }
 

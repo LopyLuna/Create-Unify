@@ -48,14 +48,10 @@ public class UnifyEvent {
                     return;
                 }
                 IModFile modFile = modFileInfo.getFile();
-                event.addRepositorySource(consumer -> {
-                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_unify_ore_gen").toString(), Components.literal("Create Unify Ore Generation by Phoenix492"), false,
-                            id -> new ModFilePackResources(id, modFile, "server_packs/create_unify_ore_gen"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.BUILT_IN);
-                    if (pack != null) {
-                        consumer.accept(pack);
-                    }
-                });
+                event.addRepositorySource((consumer, constructor) -> consumer.accept(Pack.create(Unify.asResource("create_unify_ore_gen").toString(), false,
+                        () -> new ModFilePackResources("Create Unify Ore Generation by Phoenix492", modFile, "server_packs/create_unify_ore_gen"), constructor, Pack.Position.TOP, PackSource.BUILT_IN)));
             }
+
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
                 IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
                 if (modFileInfo == null) {
@@ -63,13 +59,8 @@ public class UnifyEvent {
                     return;
                 }
                 IModFile modFile = modFileInfo.getFile();
-                event.addRepositorySource(consumer -> {
-                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_ore_retexture").toString(), Components.literal("Create Ore Retexture"), true,
-                            id -> new ModFilePackResources(id, modFile, "resource_packs/create_ore_retexture"), PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
-                    if (pack != null) {
-                        consumer.accept(pack);
-                    }
-                });
+                event.addRepositorySource((consumer, constructor) -> consumer.accept(Pack.create(Unify.asResource("create_ore_retexture").toString(), true,
+                        () -> new ModFilePackResources("Create Ore Retexture", modFile, "resource_packs/create_ore_retexture"), constructor, Pack.Position.TOP, PackSource.DEFAULT)));
             }
         }
     }

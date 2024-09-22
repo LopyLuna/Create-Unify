@@ -1,11 +1,11 @@
 package uwu.lopyluna.unify.content.data_recipes;
 
 import com.simibubi.create.AllRecipeTypes;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemApplicationRecipeGen extends UnifyProcessingRecipeGen {
-    public ItemApplicationRecipeGen(PackOutput generator) {
+    public ItemApplicationRecipeGen(DataGenerator generator) {
         super(generator);
     }
 

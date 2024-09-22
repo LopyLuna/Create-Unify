@@ -64,7 +64,6 @@ public class Unify
 
         REGISTRATE.registerEventListeners(modEventBus);
 
-        UnifyCreativeModeTabs.register(modEventBus);
         UnifySoundEvents.register(modEventBus);
         UnifyTags.init();
         UnifyMaterialProvider.register();

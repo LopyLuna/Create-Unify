@@ -5,7 +5,7 @@ import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 @SuppressWarnings("unused")
 public class CrushingRecipeGen extends UnifyProcessingRecipeGen {
 
-    public CrushingRecipeGen(PackOutput generator) {
+    public CrushingRecipeGen(DataGenerator generator) {
         super(generator);
     }
 

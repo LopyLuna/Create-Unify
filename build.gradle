@@ -86,13 +86,6 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
-    maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
-        }
-    }
     flatDir {
         dirs "libs"
     }
@@ -108,20 +101,6 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
-
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
-
-    runtimeOnly fg.deobf("maven.modrinth:createaddition:1.20.1-1.2.4e")
-    //runtimeOnly fg.deobf("maven.modrinth:thermal-foundation:11.0.6")
-    //runtimeOnly fg.deobf("maven.modrinth:extreme-reactors:1.20.1-2.0.84")
-    //runtimeOnly fg.deobf("maven.modrinth:ad-astra:1.15.18")
-    //LIBRARIES FOR MODS ABOVE
-    //runtimeOnly fg.deobf("maven.modrinth:zerocore:1.20.1-2.1.45")
-    //runtimeOnly fg.deobf("maven.modrinth:resourceful-config:2.1.2")
-    //runtimeOnly fg.deobf("maven.modrinth:resourceful-lib:2.1.29")
-    //runtimeOnly fg.deobf("maven.modrinth:botarium:2.3.4")
-    //runtimeOnly fg.deobf("maven.modrinth:cofh-core:11.0.2")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
@@ -147,7 +126,7 @@ jar {
                 "Specification-Title"     : "unify",
                 "Specification-Vendor"    : "lopyluna",
                 "Specification-Version"   : "1",
-                'Implementation-Title'    : project.jar.archiveBaseName,
+                'Implementation-Title'    : project.jar.baseName,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "lopyluna",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),

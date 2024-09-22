@@ -3,7 +3,7 @@ package uwu.lopyluna.unify.content.data_recipes;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +26,7 @@ public class WashingRecipeGen extends UnifyProcessingRecipeGen {
 
     ;
 
-    public WashingRecipeGen(PackOutput generator) {
+    public WashingRecipeGen(DataGenerator generator) {
         super(generator);
     }
 

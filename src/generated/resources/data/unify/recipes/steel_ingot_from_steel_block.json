@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "C": {
       "item": "unify:steel_ingot"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "unify:steel_block"
-  },
-  "show_notification": true
+  }
 }

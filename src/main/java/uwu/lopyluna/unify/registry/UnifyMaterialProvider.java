@@ -7,7 +7,6 @@ import com.simibubi.create.foundation.item.TagDependentIngredientItem;
 import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
@@ -27,8 +26,8 @@ import static uwu.lopyluna.unify.registry.helper.metal_provider.MaterialEntry.*;
 
 @SuppressWarnings({"unused"})
 public class UnifyMaterialProvider {
-    static ResourceKey<CreativeModeTab> tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
-    static ResourceKey<CreativeModeTab> tabCreate = AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
+    static CreativeModeTab tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB;
+    static CreativeModeTab tabCreate = AllCreativeModeTabs.BASE_CREATIVE_TAB;
 
 
     public static final ItemEntry<Item> GAY_INGOT = REGISTRATE.item("gay_ingot", Item::new)
@@ -88,7 +87,7 @@ public class UnifyMaterialProvider {
     private static ItemBuilder<TagDependentIngredientItem, CreateRegistrate> compatCrushedOre(String metalName) {
         return REGISTRATE
                 .item("crushed_raw_" + metalName, props -> new TagDependentIngredientItem(props, AllTags.forgeItemTag("ores/" + metalName)))
-                .tab(tabCreate != null ? tabCreate : tab)
+                .tab(() -> (tabCreate != null ? tabCreate : tab))
                 .tag(CRUSHED_RAW_MATERIALS.tag);
     }
 

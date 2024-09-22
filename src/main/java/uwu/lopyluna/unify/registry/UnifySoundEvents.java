@@ -30,7 +30,7 @@ public class UnifySoundEvents {
 	}
 
 	private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
-		return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Unify.MOD_ID, name)));
+		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Unify.MOD_ID, name)));
 	}
 
 	public static void register(IEventBus eventBus) {
