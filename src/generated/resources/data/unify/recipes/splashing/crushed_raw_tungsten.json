@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "unify:crushed_raw_tungsten"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "unify:tungsten_nugget"
+    },
+    {
+      "chance": 0.5,
+      "item": "create:powdered_obsidian"
+    }
+  ]
+}

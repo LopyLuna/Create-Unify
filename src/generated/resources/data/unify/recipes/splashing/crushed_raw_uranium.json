@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_uranium"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "unify:uranium_nugget"
+    },
+    {
+      "chance": 0.5,
+      "item": "minecraft:glowstone_dust"
+    }
+  ]
+}

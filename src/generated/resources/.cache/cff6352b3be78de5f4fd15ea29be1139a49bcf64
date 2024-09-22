@@ -1,4 +1,4 @@
-// 1.20.1	2024-08-31T23:11:42.4706256	Registrate Provider for unify [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-09-22T10:04:51.0930092	Registrate Provider for unify [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 0d07173c0f6eb367089a0e17702be9218042e1e2 assets/unify/blockstates/aluminum_block.json
 3f6ea7c703632cf39675fb71fd0a74c7a5ff359a assets/unify/blockstates/aluminum_ore.json
 56f72b24e7d7aff0a2e6d94936be76b1f0b3f5ac assets/unify/blockstates/bronze_block.json
@@ -39,8 +39,8 @@ acf35384a0998b38c809ce4a8e8c26a15b8e1706 assets/unify/blockstates/tin_ore.json
 a232108114bc95f92e5b71597b79f1b5424b64ec assets/unify/blockstates/uranium_block.json
 d46b7b4c2ac85b3e88b1431e545e500baede88cf assets/unify/blockstates/uranium_ore.json
 f8e6ead7fab398ca71047cfd21f705ea670ea3a9 assets/unify/blockstates/wrought_iron_block.json
-11590090fb5b02c7f8ce95b9564871c31e5b16cb assets/unify/lang/en_ud.json
-d2b2ed365eb8dd9ec49f03007cbf2acc38112245 assets/unify/lang/en_us.json
+e5d5f094a31e60bf645f533d65fb6f883ab0b049 assets/unify/lang/en_ud.json
+cab1150c10aad4e3978ebcb0faac15b48fe6a28e assets/unify/lang/en_us.json
 fdb5a0f3307ee954e876d165ce8f66b8b7dbc504 assets/unify/models/block/aluminum_block.json
 e0c5ef2c7d015718625b292c674af7fe5171b16b assets/unify/models/block/aluminum_ore.json
 bcff96b5d22834f6d0b7f419d8c59dd12b52822c assets/unify/models/block/bronze_block.json
@@ -106,6 +106,7 @@ b84ea66f115bbb93db9be8de57f79294cc8c435b assets/unify/models/item/constantan_ing
 bdc739064c822cd8e21d1010a8b75ef5897b9c4d assets/unify/models/item/constantan_rod.json
 8ded7f447e835f77a9aaf4c0e22c0e19e72d61b9 assets/unify/models/item/constantan_sheet.json
 410552f9c56a8c1c732656d51ad8132e9fbcdb63 assets/unify/models/item/constantan_wire.json
+9ff9ff738c27ed7bce1f43fac4618eca7fce18ea assets/unify/models/item/crushed_raw_tungsten.json
 87a9ef45990767a13c29198fa25651a6197b076a assets/unify/models/item/deepslate_aluminum_ore.json
 eac23beb03c7d4b34dae4764dfe7de2cd41641c5 assets/unify/models/item/deepslate_lead_ore.json
 c5412830987792eac5cc41529ddf198aa055497a assets/unify/models/item/deepslate_nickel_ore.json
@@ -210,6 +211,7 @@ f0b6f052c98c42d7ec973ab3ee0263f1cdc4d5af assets/unify/models/item/uranium_block.
 27b5a8ecb89fcc066759965beee2e7f884ebd3a3 assets/unify/models/item/wrought_iron_rod.json
 66696d54f54022335c956890ef838b32660a2a58 assets/unify/models/item/wrought_iron_sheet.json
 cbc5202c704c9c32b2ea66dc5e8e934d59a370d1 assets/unify/models/item/wrought_iron_wire.json
+7dbd65ffe92c044a40ca491f1459927af4605941 data/create/tags/items/crushed_raw_materials.json
 b35e972f513ba592a632f717b364ec43f3b4215b data/forge/tags/blocks/ores.json
 17236b58be57527322d6decac513d03a95e348d0 data/forge/tags/blocks/ores/aluminum.json
 6db27c03b256b5261306a1bd11c5cd9dcdcc32a9 data/forge/tags/blocks/ores/lead.json

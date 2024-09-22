@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_platinum"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "unify:platinum_nugget"
+    },
+    {
+      "chance": 0.25,
+      "item": "create:cinder_flour"
+    }
+  ]
+}

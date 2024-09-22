@@ -82,7 +82,6 @@ public class MaterialEntry {
     public static MaterialEntry material(String name, String oreLang, MaterialType type, TagKey<Block> needTierLevel, boolean beaconCompatible, SoundType pSoundType) {
 
         ResourceKey<CreativeModeTab> tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
-        //ResourceKey<CreativeModeTab> tab = CreativeModeTabs.INGREDIENTS;
         String id = name.toLowerCase().replace(" ", "_");
         boolean ore = type == MaterialType.ORE;
         boolean alloy = type == MaterialType.ALLOY;

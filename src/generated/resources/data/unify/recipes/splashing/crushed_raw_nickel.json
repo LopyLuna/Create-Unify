@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_nickel"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "unify:nickel_nugget"
+    },
+    {
+      "chance": 0.5,
+      "item": "minecraft:charcoal"
+    }
+  ]
+}
