@@ -1,7 +1,12 @@
 package uwu.lopyluna.unify.event;
 
+import com.simibubi.create.foundation.ModFilePackResources;
+import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -9,11 +14,16 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.forgespi.language.IModFileInfo;
+import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.registries.ForgeRegistries;
+import uwu.lopyluna.unify.Unify;
 import uwu.lopyluna.unify.registry.UnifyMaterialProvider;
 
 import java.util.ArrayList;
@@ -25,6 +35,44 @@ import static uwu.lopyluna.unify.registry.UnifyMaterialProvider.getTagEntries;
 @SuppressWarnings("deprecation")
 @Mod.EventBusSubscriber
 public class UnifyEvent {
+
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModBusEvents {
+
+        @SubscribeEvent
+        public static void addPackFinders(AddPackFindersEvent event) {
+            if (event.getPackType() == PackType.SERVER_DATA) {
+                IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
+                if (modFileInfo == null) {
+                    Unify.LOGGER.error("Could not find " + Unify.NAME + " mod file info; built-in data packs will be missing!");
+                    return;
+                }
+                IModFile modFile = modFileInfo.getFile();
+                event.addRepositorySource(consumer -> {
+                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_unify_ore_gen").toString(), Components.literal("Create Unify Ore Generation by Phoenix492"), false,
+                            id -> new ModFilePackResources(id, modFile, "server_packs/create_unify_ore_gen"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.BUILT_IN);
+                    if (pack != null) {
+                        consumer.accept(pack);
+                    }
+                });
+            }
+            if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+                IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
+                if (modFileInfo == null) {
+                    Unify.LOGGER.error("Could not find " + Unify.NAME + " mod file info; built-in resource packs will be missing!");
+                    return;
+                }
+                IModFile modFile = modFileInfo.getFile();
+                event.addRepositorySource(consumer -> {
+                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_ore_retexture").toString(), Components.literal("Create Ore Retexture"), true,
+                            id -> new ModFilePackResources(id, modFile, "resource_packs/create_ore_retexture"), PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
+                    if (pack != null) {
+                        consumer.accept(pack);
+                    }
+                });
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onEntityTick(EntityEvent event) {

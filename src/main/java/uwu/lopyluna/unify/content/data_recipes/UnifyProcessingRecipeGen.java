@@ -35,6 +35,8 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
         GENERATORS.add(new ItemApplicationRecipeGen(output));
         GENERATORS.add(new MixingRecipeGen(output));
         GENERATORS.add(new PressingRecipeGen(output));
+        GENERATORS.add(new CrushingRecipeGen(output));
+        GENERATORS.add(new WashingRecipeGen(output));
 
         gen.addProvider(true, new DataProvider() {
 

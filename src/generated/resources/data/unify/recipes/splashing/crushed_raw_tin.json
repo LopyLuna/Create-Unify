@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_tin"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "item": "unify:tin_nugget"
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:flint"
+    }
+  ]
+}

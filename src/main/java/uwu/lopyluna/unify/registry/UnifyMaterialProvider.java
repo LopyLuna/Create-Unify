@@ -1,9 +1,16 @@
 package uwu.lopyluna.unify.registry;
 
+import com.simibubi.create.AllCreativeModeTabs;
+import com.simibubi.create.AllTags;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.TagDependentIngredientItem;
+import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -13,12 +20,16 @@ import uwu.lopyluna.unify.registry.helper.metal_provider.MaterialType;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.simibubi.create.AllTags.AllItemTags.CRUSHED_RAW_MATERIALS;
 import static uwu.lopyluna.unify.Unify.REGISTRATE;
 import static uwu.lopyluna.unify.registry.UnifyTags.forgeItemTag;
 import static uwu.lopyluna.unify.registry.helper.metal_provider.MaterialEntry.*;
 
 @SuppressWarnings({"unused"})
 public class UnifyMaterialProvider {
+    static ResourceKey<CreativeModeTab> tab = UnifyCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
+    static ResourceKey<CreativeModeTab> tabCreate = AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey();
+
 
     public static final ItemEntry<Item> GAY_INGOT = REGISTRATE.item("gay_ingot", Item::new)
             .lang("Gay Ingot")
@@ -45,6 +56,9 @@ public class UnifyMaterialProvider {
     public static final MaterialEntry TARNISHED_GOLD = material("Tarnished Gold", MaterialType.ALLOY, ironTool, true, SoundType.METAL);
 
 
+    public static final ItemEntry<TagDependentIngredientItem>
+            CRUSHED_WOLFRAM = compatCrushedOre("tungsten").register();
+
 
     public static List<Item> getEntries() {
         List<Item> entry = new ArrayList<>();
@@ -68,6 +82,14 @@ public class UnifyMaterialProvider {
             entry.addAll(mats.tagKeys);
         }
         return entry;
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private static ItemBuilder<TagDependentIngredientItem, CreateRegistrate> compatCrushedOre(String metalName) {
+        return REGISTRATE
+                .item("crushed_raw_" + metalName, props -> new TagDependentIngredientItem(props, AllTags.forgeItemTag("ores/" + metalName)))
+                .tab(tabCreate != null ? tabCreate : tab)
+                .tag(CRUSHED_RAW_MATERIALS.tag);
     }
 
     public static void register() {}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "unify_oregen:lead_ore_lower",
+  "step": "underground_ores"
+}
