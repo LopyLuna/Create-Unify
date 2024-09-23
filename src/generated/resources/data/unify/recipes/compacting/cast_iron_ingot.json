@@ -1,6 +1,5 @@
 {
   "type": "create:compacting",
-  "heatRequirement": "heated",
   "ingredients": [
     {
       "item": "unify:wrought_iron_ingot"
@@ -13,5 +12,6 @@
     {
       "item": "unify:cast_iron_ingot"
     }
-  ]
+  ],
+  "heatRequirement": "heated"
 }

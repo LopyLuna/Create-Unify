@@ -5,23 +5,23 @@
       "item": "unify:deepslate_lead_ore"
     }
   ],
-  "processingTime": 350,
   "results": [
     {
-      "count": 2,
-      "item": "create:crushed_raw_lead"
+      "item": "create:crushed_raw_lead",
+      "count": 2
     },
     {
-      "chance": 0.25,
-      "item": "create:crushed_raw_lead"
+      "item": "create:crushed_raw_lead",
+      "chance": 0.25
     },
     {
-      "chance": 0.75,
-      "item": "create:experience_nugget"
+      "item": "create:experience_nugget",
+      "chance": 0.75
     },
     {
-      "chance": 0.125,
-      "item": "minecraft:cobbled_deepslate"
+      "item": "minecraft:cobbled_deepslate",
+      "chance": 0.125
     }
-  ]
+  ],
+  "processingTime": 350
 }

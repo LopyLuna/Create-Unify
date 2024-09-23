@@ -5,14 +5,14 @@
       "item": "unify:raw_tungsten"
     }
   ],
-  "processingTime": 400,
   "results": [
     {
       "item": "unify:crushed_raw_tungsten"
     },
     {
-      "chance": 0.75,
-      "item": "create:experience_nugget"
+      "item": "create:experience_nugget",
+      "chance": 0.75
     }
-  ]
+  ],
+  "processingTime": 400
 }

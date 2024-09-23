@@ -1,6 +1,5 @@
 {
   "type": "create:mixing",
-  "heatRequirement": "heated",
   "ingredients": [
     {
       "item": "unify:tin_ingot"
@@ -11,8 +10,9 @@
   ],
   "results": [
     {
-      "count": 2,
-      "item": "unify:bronze_ingot"
+      "item": "unify:bronze_ingot",
+      "count": 2
     }
-  ]
+  ],
+  "heatRequirement": "heated"
 }

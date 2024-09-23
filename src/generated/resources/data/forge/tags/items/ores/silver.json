@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "unify:silver_ore",
     "unify:deepslate_silver_ore"

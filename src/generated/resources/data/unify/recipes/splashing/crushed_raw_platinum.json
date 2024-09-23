@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:platinum_nugget"
+      "item": "unify:platinum_nugget",
+      "count": 9
     },
     {
-      "chance": 0.25,
-      "item": "create:cinder_flour"
+      "item": "create:cinder_flour",
+      "chance": 0.25
     }
   ]
 }

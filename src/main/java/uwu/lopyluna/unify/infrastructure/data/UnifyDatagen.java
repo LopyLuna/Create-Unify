@@ -2,7 +2,7 @@ package uwu.lopyluna.unify.infrastructure.data;
 
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.data.DataGenerator;
-import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import uwu.lopyluna.unify.Unify;
 import uwu.lopyluna.unify.content.data_recipes.UnifyProcessingRecipeGen;
 import uwu.lopyluna.unify.registry.UnifyLangPartial;

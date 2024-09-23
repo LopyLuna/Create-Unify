@@ -7,9 +7,9 @@ import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -37,7 +37,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
         GENERATORS.add(new CrushingRecipeGen(gen));
         GENERATORS.add(new WashingRecipeGen(gen));
 
-        gen.addProvider(true, new DataProvider() {
+        gen.addProvider(new DataProvider() {
 
             @Override
             public String getName() {
@@ -46,7 +46,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
             @SuppressWarnings("all")
             @Override
-            public void run(CachedOutput dc) throws IOException {
+            public void run(HashCache dc) throws IOException {
                 GENERATORS.forEach(g -> {
                     try {
                         g.run(dc);

@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "unify:tungsten_ore",
     "unify:deepslate_tungsten_ore"

@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:aluminum_nugget"
+      "item": "unify:aluminum_nugget",
+      "count": 9
     },
     {
-      "chance": 0.25,
-      "item": "minecraft:pointed_dripstone"
+      "item": "minecraft:pointed_dripstone",
+      "chance": 0.25
     }
   ]
 }

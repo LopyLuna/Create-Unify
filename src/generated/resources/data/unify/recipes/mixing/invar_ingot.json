@@ -1,6 +1,5 @@
 {
   "type": "create:mixing",
-  "heatRequirement": "heated",
   "ingredients": [
     {
       "item": "unify:nickel_ingot"
@@ -14,8 +13,9 @@
   ],
   "results": [
     {
-      "count": 3,
-      "item": "unify:invar_ingot"
+      "item": "unify:invar_ingot",
+      "count": 3
     }
-  ]
+  ],
+  "heatRequirement": "heated"
 }

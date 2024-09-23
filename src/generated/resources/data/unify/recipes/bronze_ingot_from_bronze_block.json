@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "C": {
-      "item": "unify:bronze_ingot"
-    }
-  },
   "pattern": [
     "CCC",
     "CCC",
     "CCC"
   ],
+  "key": {
+    "C": {
+      "item": "unify:bronze_ingot"
+    }
+  },
   "result": {
     "item": "unify:bronze_block"
   }

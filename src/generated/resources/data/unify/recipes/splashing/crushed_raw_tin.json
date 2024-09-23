@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:tin_nugget"
+      "item": "unify:tin_nugget",
+      "count": 9
     },
     {
-      "chance": 0.25,
-      "item": "minecraft:flint"
+      "item": "minecraft:flint",
+      "chance": 0.25
     }
   ]
 }

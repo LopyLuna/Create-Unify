@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:lead_nugget"
+      "item": "unify:lead_nugget",
+      "count": 9
     },
     {
-      "chance": 0.5,
-      "item": "minecraft:sugar"
+      "item": "minecraft:sugar",
+      "chance": 0.5
     }
   ]
 }

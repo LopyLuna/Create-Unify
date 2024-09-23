@@ -5,22 +5,22 @@
       "item": "unify:uranium_ore"
     }
   ],
-  "processingTime": 250,
   "results": [
     {
       "item": "create:crushed_raw_uranium"
     },
     {
-      "chance": 0.75,
-      "item": "create:crushed_raw_uranium"
+      "item": "create:crushed_raw_uranium",
+      "chance": 0.75
     },
     {
-      "chance": 0.75,
-      "item": "create:experience_nugget"
+      "item": "create:experience_nugget",
+      "chance": 0.75
     },
     {
-      "chance": 0.125,
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:cobblestone",
+      "chance": 0.125
     }
-  ]
+  ],
+  "processingTime": 250
 }

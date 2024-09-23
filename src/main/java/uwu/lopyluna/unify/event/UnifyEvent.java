@@ -1,7 +1,6 @@
 package uwu.lopyluna.unify.event;
 
 import com.simibubi.create.foundation.ModFilePackResources;
-import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -10,6 +9,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -41,16 +41,16 @@ public class UnifyEvent {
 
         @SubscribeEvent
         public static void addPackFinders(AddPackFindersEvent event) {
-            if (event.getPackType() == PackType.SERVER_DATA) {
-                IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
-                if (modFileInfo == null) {
-                    Unify.LOGGER.error("Could not find " + Unify.NAME + " mod file info; built-in data packs will be missing!");
-                    return;
-                }
-                IModFile modFile = modFileInfo.getFile();
-                event.addRepositorySource((consumer, constructor) -> consumer.accept(Pack.create(Unify.asResource("create_unify_ore_gen").toString(), false,
-                        () -> new ModFilePackResources("Create Unify Ore Generation by Phoenix492", modFile, "server_packs/create_unify_ore_gen"), constructor, Pack.Position.TOP, PackSource.BUILT_IN)));
-            }
+            //if (event.getPackType() == PackType.SERVER_DATA) {
+            //    IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
+            //    if (modFileInfo == null) {
+            //        Unify.LOGGER.error("Could not find " + Unify.NAME + " mod file info; built-in data packs will be missing!");
+            //        return;
+            //    }
+            //    IModFile modFile = modFileInfo.getFile();
+            //    event.addRepositorySource((consumer, constructor) -> consumer.accept(Pack.create(Unify.asResource("create_unify_ore_gen").toString(), false,
+            //            () -> new ModFilePackResources("Create Unify Ore Generation by Phoenix492", modFile, "server_packs/create_unify_ore_gen"), constructor, Pack.Position.TOP, PackSource.BUILT_IN)));
+            //}
 
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
                 IModFileInfo modFileInfo = ModList.get().getModFileById(Unify.MOD_ID);
@@ -93,9 +93,9 @@ public class UnifyEvent {
     }
 
     @SubscribeEvent
-    public static void onLivingEntityTick(LivingEvent.LivingTickEvent event) {
+    public static void onLivingEntityTick(LivingEvent event) {
         if (event.getEntity() instanceof Player player && !UnifyMaterialProvider.getEntries().isEmpty() && !(player.containerMenu instanceof CreativeModeInventoryScreen.ItemPickerMenu)) {
-            List<Slot> slots = player.hasContainerOpen() ? player.containerMenu.slots : player.inventoryMenu.slots;
+            List<Slot> slots = player.containerMenu instanceof InventoryMenu ? player.inventoryMenu.slots : player.containerMenu.slots;
             for (Slot slot : slots) {
                 ItemStack itemStack = slot.getItem();
                 Item item = itemStack.getItem();

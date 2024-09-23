@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
-  "cookingtime": 100,
-  "experience": 0.7,
   "ingredient": {
     "item": "unify:raw_tin"
   },
-  "result": "unify:tin_ingot"
+  "result": "unify:tin_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
 }

@@ -5,22 +5,22 @@
       "item": "unify:tungsten_ore"
     }
   ],
-  "processingTime": 250,
   "results": [
     {
       "item": "unify:crushed_raw_tungsten"
     },
     {
-      "chance": 0.75,
-      "item": "unify:crushed_raw_tungsten"
+      "item": "unify:crushed_raw_tungsten",
+      "chance": 0.75
     },
     {
-      "chance": 0.75,
-      "item": "create:experience_nugget"
+      "item": "create:experience_nugget",
+      "chance": 0.75
     },
     {
-      "chance": 0.125,
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:cobblestone",
+      "chance": 0.125
     }
-  ]
+  ],
+  "processingTime": 250
 }

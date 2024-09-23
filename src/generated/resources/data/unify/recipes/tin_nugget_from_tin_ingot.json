@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "C": {
-      "item": "unify:tin_nugget"
-    }
-  },
   "pattern": [
     "CCC",
     "CCC",
     "CCC"
   ],
+  "key": {
+    "C": {
+      "item": "unify:tin_nugget"
+    }
+  },
   "result": {
     "item": "unify:tin_ingot"
   }

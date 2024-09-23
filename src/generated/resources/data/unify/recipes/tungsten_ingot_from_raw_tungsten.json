@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.7,
   "ingredient": {
     "item": "unify:raw_tungsten"
   },
-  "result": "unify:tungsten_ingot"
+  "result": "unify:tungsten_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
 }

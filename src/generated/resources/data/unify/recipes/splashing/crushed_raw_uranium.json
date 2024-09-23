@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:uranium_nugget"
+      "item": "unify:uranium_nugget",
+      "count": 9
     },
     {
-      "chance": 0.5,
-      "item": "minecraft:glowstone_dust"
+      "item": "minecraft:glowstone_dust",
+      "chance": 0.5
     }
   ]
 }

@@ -5,16 +5,16 @@
       "item": "unify:raw_platinum_block"
     }
   ],
-  "processingTime": 400,
   "results": [
     {
-      "count": 9,
-      "item": "create:crushed_raw_platinum"
+      "item": "create:crushed_raw_platinum",
+      "count": 9
     },
     {
-      "chance": 0.75,
+      "item": "create:experience_nugget",
       "count": 9,
-      "item": "create:experience_nugget"
+      "chance": 0.75
     }
-  ]
+  ],
+  "processingTime": 400
 }

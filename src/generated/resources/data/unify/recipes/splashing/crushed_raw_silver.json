@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:silver_nugget"
+      "item": "unify:silver_nugget",
+      "count": 9
     },
     {
-      "chance": 0.25,
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:lapis_lazuli",
+      "chance": 0.25
     }
   ]
 }

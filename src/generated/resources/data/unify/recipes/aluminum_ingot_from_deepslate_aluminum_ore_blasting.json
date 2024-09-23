@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
-  "cookingtime": 100,
-  "experience": 0.7,
   "ingredient": {
     "item": "unify:deepslate_aluminum_ore"
   },
-  "result": "unify:aluminum_ingot"
+  "result": "unify:aluminum_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
 }

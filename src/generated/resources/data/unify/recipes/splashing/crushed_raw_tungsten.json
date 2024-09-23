@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:tungsten_nugget"
+      "item": "unify:tungsten_nugget",
+      "count": 9
     },
     {
-      "chance": 0.5,
-      "item": "create:powdered_obsidian"
+      "item": "create:powdered_obsidian",
+      "chance": 0.5
     }
   ]
 }

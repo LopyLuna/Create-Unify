@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.7,
   "ingredient": {
     "item": "unify:uranium_ore"
   },
-  "result": "unify:uranium_ingot"
+  "result": "unify:uranium_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
 }

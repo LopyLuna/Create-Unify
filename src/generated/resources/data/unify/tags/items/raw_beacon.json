@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "unify:tin_ingot",
     "unify:aluminum_ingot"

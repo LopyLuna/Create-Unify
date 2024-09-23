@@ -7,12 +7,12 @@
   ],
   "results": [
     {
-      "count": 9,
-      "item": "unify:nickel_nugget"
+      "item": "unify:nickel_nugget",
+      "count": 9
     },
     {
-      "chance": 0.5,
-      "item": "minecraft:charcoal"
+      "item": "minecraft:charcoal",
+      "chance": 0.5
     }
   ]
 }
