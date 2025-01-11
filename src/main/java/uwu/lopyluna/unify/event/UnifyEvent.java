@@ -18,6 +18,7 @@ import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forgespi.language.IModFileInfo;
@@ -103,7 +104,7 @@ public class UnifyEvent {
 
     @SubscribeEvent
     public static void onLivingEntityTick(LivingEvent.LivingTickEvent event) {
-        if (event.getEntity() instanceof Player player && !UnifyMaterialProvider.getEntries().isEmpty() && !(player.containerMenu instanceof CreativeModeInventoryScreen.ItemPickerMenu)) {
+        if (event.getEntity() instanceof Player player && !UnifyMaterialProvider.getEntries().isEmpty() && !DistExecutor.safeRunForDist(() -> () -> player.containerMenu instanceof CreativeModeInventoryScreen.ItemPickerMenu, () -> () -> false)) {
             List<Slot> slots = player.hasContainerOpen() ? player.containerMenu.slots : player.inventoryMenu.slots;
             for (Slot slot : slots) {
                 ItemStack itemStack = slot.getItem();
