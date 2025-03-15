@@ -1,7 +1,7 @@
 package uwu.lopyluna.unify.registry;
 
-import com.simibubi.create.foundation.utility.Components;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +18,7 @@ public class UnifyCreativeModeTabs {
 
 	public static final RegistryObject<CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base",
 			() -> CreativeModeTab.builder()
-					.title(Components.translatable("itemGroup."+ Unify.MOD_ID +".base"))
+					.title(Component.translatable("itemGroup."+ Unify.MOD_ID +".base"))
 					.withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
 					.icon(() -> new ItemStack(UnifyMaterialProvider.TIN.ingot.get()))
 					.build());

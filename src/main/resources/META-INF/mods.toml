@@ -32,7 +32,7 @@ YIPPEE WASSUP THIS HURTS MY HEAD LMAO
 [[dependencies.unify]]
     modId="create"
     mandatory=true
-    versionRange="[0.5.1.f,)"
+    versionRange="[6.0.0,)"
     ordering="AFTER"
     side="BOTH"
 

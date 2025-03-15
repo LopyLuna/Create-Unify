@@ -75,6 +75,10 @@ minecraft {
 
 repositories {
     maven {
+        name = "Create Mod maven"
+        url = "https://maven.createmod.net"
+    }
+    maven {
         name = 'tterrag maven'
         url = 'https://maven.tterrag.com/'
     }
@@ -102,7 +106,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
+    compileOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}"))
+    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
@@ -112,7 +118,7 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}:api")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${minecraft_version}")
 
-    runtimeOnly fg.deobf("maven.modrinth:createaddition:1.20.1-1.2.4e")
+    //runtimeOnly fg.deobf("maven.modrinth:createaddition:1.20.1-1.2.4e")
     //runtimeOnly fg.deobf("maven.modrinth:thermal-foundation:11.0.6")
     //runtimeOnly fg.deobf("maven.modrinth:extreme-reactors:1.20.1-2.0.84")
     //runtimeOnly fg.deobf("maven.modrinth:ad-astra:1.15.18")

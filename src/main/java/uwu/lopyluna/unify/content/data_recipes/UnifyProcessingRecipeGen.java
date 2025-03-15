@@ -5,7 +5,6 @@ import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import com.simibubi.create.foundation.utility.RegisteredObjects;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
@@ -14,6 +13,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
 import uwu.lopyluna.unify.Unify;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -66,7 +66,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
             ItemLike itemLike = singleIngredient.get();
             transform
                     .apply(new ProcessingRecipeBuilder<>(serializer.getFactory(),
-                            new ResourceLocation(namespace, RegisteredObjects.getKeyOrThrow(itemLike.asItem())
+                            new ResourceLocation(namespace, ForgeRegistries.ITEMS.getKey(itemLike.asItem())
                                     .getPath())).withItemIngredients(Ingredient.of(itemLike)))
                     .build(c);
         };
@@ -107,7 +107,7 @@ public abstract class UnifyProcessingRecipeGen extends CreateRecipeProvider {
 
     protected Supplier<ResourceLocation> idWithSuffix(Supplier<ItemLike> item, String suffix) {
         return () -> {
-            ResourceLocation registryName = RegisteredObjects.getKeyOrThrow(item.get()
+            ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(item.get().asItem()
                     .asItem());
             return Unify.asResource(registryName.getPath() + suffix);
         };
