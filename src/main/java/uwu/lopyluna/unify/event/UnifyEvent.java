@@ -1,8 +1,8 @@
 package uwu.lopyluna.unify.event;
 
-import com.simibubi.create.foundation.ModFilePackResources;
-import com.simibubi.create.foundation.utility.Components;
+import com.simibubi.create.foundation.pack.ModFilePackResources;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
@@ -49,7 +49,7 @@ public class UnifyEvent {
                 }
                 IModFile modFile = modFileInfo.getFile();
                 event.addRepositorySource(consumer -> {
-                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_unify_ore_gen").toString(), Components.literal("Create Unify Ore Generation by Phoenix492"), false,
+                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_unify_ore_gen").toString(), Component.literal("Create Unify Ore Generation by Phoenix492"), false,
                             id -> new ModFilePackResources(id, modFile, "server_packs/create_unify_ore_gen"), PackType.SERVER_DATA, Pack.Position.TOP, PackSource.BUILT_IN);
                     if (pack != null) {
                         consumer.accept(pack);
@@ -64,7 +64,7 @@ public class UnifyEvent {
                 }
                 IModFile modFile = modFileInfo.getFile();
                 event.addRepositorySource(consumer -> {
-                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_ore_retexture").toString(), Components.literal("Create Ore Retexture"), true,
+                    Pack pack = Pack.readMetaAndCreate(Unify.asResource("create_ore_retexture").toString(), Component.literal("Create Ore Retexture"), true,
                             id -> new ModFilePackResources(id, modFile, "resource_packs/create_ore_retexture"), PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
                     if (pack != null) {
                         consumer.accept(pack);
